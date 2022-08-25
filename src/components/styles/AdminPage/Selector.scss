@@ -1,0 +1,23 @@
+@import "../mixins";
+.container_manage {
+  width: 100%;
+  height: 5vh;
+  background: blueviolet;
+  .manage_left {
+    @include flex-center();
+    display: flex;
+    width: calc(50%);
+    margin-left: calc(10%);
+    font-size: calc(100%);
+    font-weight: bold;
+    padding-top: 1vh;
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .user {
+      margin-right: 5vw;
+    }
+  }
+}

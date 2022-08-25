@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AdminPage from "./views/AdminPage/AdminPage";
 import LoginPage from "./views/Athentication/LoginPage";
 import RegisterPage from "./views/Athentication/RegisterPage";
 import Header from "./views/Header/Header";
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<LandingPage />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/adminPage" element={<AdminPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
