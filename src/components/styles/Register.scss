@@ -1,0 +1,77 @@
+* {
+  font-family: "Nanum Gothic" !important;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: "100vh";
+}
+
+.frm {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+}
+.check {
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+}
+
+.email {
+  display: flex;
+  width: 70%;
+  padding: 10px 15px 10px 14px;
+  position: relative;
+  height: 51px;
+}
+.emailck {
+  display: block;
+  width: 30%;
+  font-size: 15px;
+  color: #fff;
+  border: solid 1px rgba(0, 0, 0, 0.08);
+  background-color: #03c75a;
+  margin-left: 30px;
+  padding-left: 65px;
+  padding-top: 13.5px;
+}
+.name {
+  margin-top: 10px;
+  height: 51px;
+  border: solid 1px #dadada;
+  margin-bottom: 20px;
+}
+.pwd {
+  margin-top: 10px;
+  height: 51px;
+  border: solid 1px #dadada;
+  margin-bottom: 20px;
+}
+
+.pwdcheck {
+  margin-top: 10px;
+  height: 51px;
+  border: solid 1px #dadada;
+  margin-bottom: 20px;
+}
+.regi {
+  margin-top: 10px;
+  height: 51px;
+  border: solid 1px;
+  margin-bottom: 20px;
+  border-radius: 1em 1em 1em 1em;
+  font-weight: bold;
+  color: #fff;
+  border: solid 1px rgba(0, 0, 0, 0.08);
+  background-color: #03c75a;
+}
+.png {
+  display: flex;
+  position: relative;
+}

@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Login.scss";
-import { loginUser } from "../../../redux/_actions/user_action";
+import { auth, loginUser } from "../../../redux/_actions/user_action";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -22,13 +22,10 @@ function LoginPage() {
   const onPasswordHandler = (event) => {
     setPassword(event.currentTarget.value);
   };
-  useEffect(() => {
-    console.log("los");
-  }, []);
 
   const navigate = useNavigate();
   const onRegister = () => {
-    // navigate("/register");
+    navigate("/register");
   };
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -45,6 +42,11 @@ function LoginPage() {
       window.localStorage.setItem("userId", response.payload.userId);
       window.localStorage.setItem("name", response.payload.name);
       if (response.payload.loginSuccess) {
+        dispatch(auth()).then((response) => {
+          if (response.payload.isAdmin === true) {
+            window.localStorage.setItem("Admin", true);
+          }
+        });
         navigate("/");
       } else {
         alert("Error");
