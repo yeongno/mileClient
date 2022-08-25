@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import auth from "../hoc/auth";
 import AdminPage from "./views/AdminPage/AdminPage";
 import PostManagement from "./views/AdminPage/PostManagement";
 import UserManagement from "./views/AdminPage/UserManagement";
@@ -11,13 +12,15 @@ import NavBar from "./views/navBar/NavBar";
 
 function App() {
   const isAuth = window.localStorage.getItem("name");
+  const AdminPage1 = auth(AdminPage, true);
+  const LandingPage1 = auth(LandingPage, true);
 
   return (
     <BrowserRouter>
       {isAuth && <Header />}
       <NavBar />
       <Routes>
-        <Route path="/adminPage" element={<AdminPage />}>
+        <Route path="/adminPage" element={<AdminPage1 />}>
           <Route
             path="/adminPage/userManagement"
             element={<UserManagement />}
@@ -27,7 +30,7 @@ function App() {
             element={<PostManagement />}
           />
         </Route>
-        <Route path="/" element={<LandingPage />}>
+        <Route path="/" element={<LandingPage1 />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Route>

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { LOGIN_USER, REGISTER_USER, AUTH_USER } from "./types";
 import { USER_SERVER } from "../../config/ServerConfig";
-import { useNavigate } from "react-router-dom";
 export function loginUser(dataToSubmit) {
   const request = axios
     .post(`${USER_SERVER}/login`, dataToSubmit)

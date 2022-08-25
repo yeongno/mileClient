@@ -12,7 +12,7 @@ function NavBar() {
     window.localStorage.removeItem("userId");
     window.localStorage.removeItem("name");
     window.localStorage.removeItem("Admin");
-    window.location.reload("/");
+    window.location.reload();
   };
 
   return (
