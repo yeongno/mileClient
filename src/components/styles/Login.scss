@@ -1,0 +1,104 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  font-size: 18px;
+}
+.lwrap {
+  height: 360px;
+  width: 460px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  border-radius: 10px 10px 10px 10px;
+  flex-direction: column;
+  border: 1px inset gray;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.login_type {
+  height: 20%;
+  display: flex;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.loginfrm {
+  height: 80%;
+}
+.bt1 {
+  top: 0%;
+  height: 100%;
+  position: relative;
+  vertical-align: top;
+  font-size: 18px;
+  display: inline-block;
+  flex: 1;
+}
+.bt1:hover {
+  box-shadow: 0 80px 0 0 rgba(0, 0, 0, 0.25) inset,
+    0 -80px 0 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+.bt2 {
+  top: 0%;
+  height: 100%;
+  position: relative;
+  vertical-align: top;
+  font-size: 18px;
+  display: inline-block;
+  flex: 1;
+}
+.bt2:hover {
+  box-shadow: 0 80px 0 0 rgba(0, 0, 0, 0.25) inset,
+    0 -80px 0 0 rgba(0, 0, 0, 0.25) inset;
+}
+.bt3 {
+  top: 0%;
+  height: 100%;
+  flex: 1;
+  position: relative;
+  vertical-align: top;
+  font-size: 18px;
+  display: inline-block;
+}
+.bt3:hover {
+  box-shadow: 0 80px 0 0 rgba(0, 0, 0, 0.25) inset,
+    0 -80px 0 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+.form {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+}
+.email {
+  height: 20%;
+  margin: 0 1em 0 1em;
+  border-radius: 6px 6px 0 0;
+}
+.password {
+  height: 20%;
+  margin: 0 1em 0 1em;
+  border-radius: 0 0 6px 6px;
+}
+.lobb {
+  margin: 2em 1em 0 1em;
+  height: 20%;
+  border: 1px skyblue;
+  background-color: rgba(0, 0, 0, 0);
+  color: skyblue;
+  padding: 5px;
+  border-radius: 5px 5px 5px 5px;
+  background: gray;
+}
+.lobb:hover {
+  box-shadow: 0 80px 0 0 rgba(0, 0, 0, 0.25) inset,
+    0 -80px 0 0 rgba(0, 0, 0, 0.25) inset;
+}

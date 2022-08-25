@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 
 function LandingPage() {
-  const [Name, setName] = useState();
-  useEffect(() => {
-    axios.post("api/users/register", {});
-  }, []);
-
-  return <div>sfdafsdafsdafasfsdfsad</div>;
+  return (
+    <div>
+      <Outlet />
+    </div>
+  );
 }
 
 export default LandingPage;
