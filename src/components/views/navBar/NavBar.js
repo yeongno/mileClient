@@ -24,7 +24,7 @@ function NavBar() {
           </a>
         </div>
         <div className="menu_login">
-          {isAuth === "" && (
+          {!isAuth && (
             <a className="login" onClick={goLogin}>
               LogIn
             </a>

@@ -48,6 +48,7 @@ function LoginPage() {
           }
         });
         navigate("/");
+        window.location.reload("/");
       } else {
         alert("Error");
       }
