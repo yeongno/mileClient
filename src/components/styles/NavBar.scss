@@ -6,22 +6,37 @@
   justify-items: center;
   justify-content: center;
   .menu {
+    display: flex;
     width: 100vw;
     padding: 0 20px;
     border-bottom: solid 1px #e8e8e8;
-    overflow: auto;
-    box-shadow: 0 0 30px #f3f1f1;
+    border-bottom-color: 0 0 30px #f3f1f1;
     background-color: white;
-  }
 
-  .menu__logo {
-    width: 150px;
-    margin-left: calc(48%);
-  }
+    .menu__logo {
+      width: 150px;
+      margin-left: calc(48%);
+      .home {
+        display: inline-block;
 
-  .menu__logo a {
-    display: inline-block;
-    font-size: 20px;
-    padding: 19px 20px;
+        font-size: 20px;
+        padding: 19px 20px;
+      }
+    }
+
+    .menu_login {
+      margin-left: calc(30%);
+      margin-right: calc(5%);
+      .login {
+        display: inline-block;
+        font-size: 20px;
+        padding: 19px 20px;
+      }
+      .logout {
+        display: inline-block;
+        font-size: 20px;
+        padding: 19px 20px;
+      }
+    }
   }
 }

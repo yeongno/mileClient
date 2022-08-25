@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  background: grey;
+  .container_user {
+    margin-left: calc(20%);
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .user_name {
+    }
+    .modify {
+      margin-left: calc(1%);
+    }
+    .admin {
+      margin-left: calc(1%);
+    }
+  }
+}
