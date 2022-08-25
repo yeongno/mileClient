@@ -15,7 +15,9 @@ export default function (SpecificComponent, option, adminRoute = null) {
     useEffect(() => {
       dispatch(auth()).then((response) => {
         if (response.payload.isAdmin) {
-          alert("isAdmin", response.payload.isAdmin);
+          //todo 한번씩 localStorage의 값이 변경 안됨.
+          //관리자 페이지에서 로그아웃 하면 관리자페이지 영역이 그대로 남아 있음
+          //hoc를 사용한 auth 또한 각기 컴포넌트들에 제약 걸기
         } else {
         }
         //로그인 하지 않은 상태
