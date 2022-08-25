@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LeftMenu from "./Sections/LeftMenu";
 import RightMenu from "./Sections/RightMenu";
 import { Drawer, Button } from "antd";
 import "./Sections/NavBar.css";
 import { MenuOutlined } from "@ant-design/icons";
+import axios from "axios";
 
 function NavBar() {
   const [visible, setVisible] = useState(false);
@@ -15,12 +16,19 @@ function NavBar() {
   const onClose = () => {
     setVisible(false);
   };
+  const [Name, setName] = useState();
+  useEffect(() => {
+    axios.get("api/users/getUsers").then((response) => {
+      setName(response.data.userInfo[0].name);
+    });
+  }, []);
 
   return (
     <nav
       className="menu"
       style={{ position: "fixed", zIndex: 5, width: "100%" }}
     >
+      {Name}
       <div className="menu__logo">
         <a href="/">Home</a>
       </div>
