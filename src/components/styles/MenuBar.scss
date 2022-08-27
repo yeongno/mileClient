@@ -1,0 +1,18 @@
+@import "mixins";
+.menu_container {
+  @include flex-center;
+  width: 100%;
+  background: yellow;
+  display: block;
+
+  .btn_container {
+    margin-left: calc(20%);
+
+    button {
+      border-color: gray;
+      border: 2px;
+      border-radius: 20px;
+      margin-right: 10%;
+    }
+  }
+}

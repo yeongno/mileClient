@@ -7,8 +7,10 @@ import PostManagement from "./views/AdminPage/PostManagement";
 import UserManagement from "./views/AdminPage/UserManagement";
 import LoginPage from "./views/Athentication/LoginPage";
 import RegisterPage from "./views/Athentication/RegisterPage";
+import CommunityPage from "./views/Community/CommunityPage";
 import Header from "./views/Header/Header";
 import LandingPage from "./views/LandingPage";
+import MenuBar from "./views/MenuBar/MenuBar";
 import NavBar from "./views/navBar/NavBar";
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
     <BrowserRouter>
       {isAuth && <Header />}
       <NavBar />
+      <MenuBar />
       <Routes>
         {isAuth && (
           <Route path="/adminPage" element={<AdminPage />}>
@@ -37,6 +40,7 @@ function App() {
         <Route path="/" element={<LandingPage1 />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/community" element={<CommunityPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
