@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/NavBar.scss";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { auth, logout } from "../../../redux/_actions/user_action";
 function NavBar() {
   const isAuth = window.localStorage.getItem("userId");
   const [visible, setVisible] = useState(false);
@@ -8,10 +10,12 @@ function NavBar() {
   const goLogin = () => {
     navigate("/login");
   };
+  const dispatch = useDispatch();
   const goLogout = () => {
     window.localStorage.removeItem("userId");
     window.localStorage.removeItem("name");
     window.localStorage.removeItem("Admin");
+    dispatch(logout());
     window.location.reload();
   };
 

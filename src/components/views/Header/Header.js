@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ReAuth from "../../SetRedux/ReAuth";
 import "../../styles/Header.scss";
 
 function Header() {
   const navigate = useNavigate();
-  const isAdmin = window.localStorage.getItem("Admin");
+  useEffect(() => {}, []);
+
+  ReAuth();
   const goManagement = () => {
     navigate("/adminPage");
   };
+  const auth = useSelector((state) => state.user);
+  console.log("Admin", auth.userData);
   return (
     <div className="container">
       <div className="container_user">
@@ -15,9 +21,9 @@ function Header() {
           {window.localStorage.getItem("name")}님 환영합니다.
         </a>
         <a className="modify">내 정보 변경</a>
-        {isAdmin && (
+        {auth.isAdmin === true && (
           <a className="admin" onClick={goManagement}>
-            관리자 페이지
+            관리자 페이지1
           </a>
         )}
       </div>
