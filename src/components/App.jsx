@@ -8,6 +8,7 @@ import UserManagement from "./views/AdminPage/UserManagement";
 import LoginPage from "./views/Athentication/LoginPage";
 import RegisterPage from "./views/Athentication/RegisterPage";
 import CommunityPage from "./views/Community/CommunityPage";
+import WritePost from "./views/Community/WritePost";
 import Header from "./views/Header/Header";
 import LandingPage from "./views/LandingPage";
 import MenuBar from "./views/MenuBar/MenuBar";
@@ -41,6 +42,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/community" element={<CommunityPage />} />
+          <Route path="/writePost" element={<WritePost />} />
         </Route>
       </Routes>
     </BrowserRouter>
