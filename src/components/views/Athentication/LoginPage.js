@@ -9,9 +9,16 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Login.scss";
 import { auth, loginUser } from "../../../redux/_actions/user_action";
+import { TURNON_SECTION } from "../../../redux/_actions/types";
+import { tempTurnOff, tempTurnOn } from "../../../redux/_actions/turn_action";
 
 function LoginPage() {
   const dispatch = useDispatch();
+  useEffect(() => {
+    //로그인화면에서 menuBar를 비활성화
+    dispatch(tempTurnOff("MenuBarTurnOff"));
+  }, []);
+
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
 
@@ -28,6 +35,7 @@ function LoginPage() {
     navigate("/register");
   };
   const onSubmitHandler = (event) => {
+    dispatch(tempTurnOn({ TurnOff: "MenuBarTurnOn" }));
     event.preventDefault();
 
     console.log("Email", Email);

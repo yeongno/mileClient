@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/NavBar.scss";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { auth, logout } from "../../../redux/_actions/user_action";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../redux/_actions/user_action";
 function NavBar() {
   const isAuth = window.localStorage.getItem("userId");
-  const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
   const goLogin = () => {
     navigate("/login");

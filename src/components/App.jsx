@@ -17,8 +17,8 @@ import NavBar from "./views/navBar/NavBar";
 function App() {
   // const isAuth = window.localStorage.getItem("name");
   const isAuth = useSelector((state) => state.user.isAuth);
-  const LandingPage1 = auth(LandingPage, true);
 
+  const LandingPage1 = auth(LandingPage, null);
   return (
     <BrowserRouter>
       {isAuth && <Header />}

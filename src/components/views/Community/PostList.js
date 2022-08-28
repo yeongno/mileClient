@@ -14,7 +14,7 @@ function PostList() {
   }, []);
 
   const fetchPostList = () => {
-    dispatch(getPost({ public: "public" })).then((response) => {
+    dispatch(getPost({ topic: "public" })).then((response) => {
       if (response.payload.success) {
         setPosts(response.payload.posts);
         console.log(response.payload.posts);
@@ -46,7 +46,7 @@ function PostList() {
             </tr>
           </thead>
           <tbody>{renderCards}</tbody>
-          {renderCards}
+          <tbody>{renderCards}</tbody>
         </table>
       </div>
     </div>
