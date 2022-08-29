@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPost } from "../../../../redux/_actions/post_action";
+import NameBar from "../commons/NameBar";
 
 function FreedomPostList() {
   const dispatch = useDispatch();
@@ -35,8 +36,8 @@ function FreedomPostList() {
   return (
     <div>
       <div>
-        <h2>자유 게시판</h2>
-        <hr />
+        <NameBar name="자유 게시글" url="/FreedomPostList" />
+
         <table>
           <thead>
             <tr>

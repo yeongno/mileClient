@@ -1,16 +1,10 @@
 import React from "react";
-import DivisionPostList from "./Notice/DivisionPostList";
-import FavoritePostList from "./Notice/FavoritePostList";
-import FreedomPostList from "./Notice/FreedomPostList";
-import ImagePostList from "./Notice/ImagePostList";
+import NoticeList from "./Notice/NoticeList";
 
 function Notice() {
   return (
     <div>
-      <FavoritePostList />
-      <ImagePostList />
-      <FreedomPostList />
-      <DivisionPostList />
+      <NoticeList />
     </div>
   );
 }

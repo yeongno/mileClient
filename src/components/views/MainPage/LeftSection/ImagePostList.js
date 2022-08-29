@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPost } from "../../../../redux/_actions/post_action";
+import NameBar from "../commons/NameBar";
 
 function ImagePostList() {
   const dispatch = useDispatch();
@@ -35,8 +36,8 @@ function ImagePostList() {
   return (
     <div>
       <div>
-        <h2>이미지 페이지</h2>
-        <hr />
+        <NameBar name="이미지 게시글" url="/FavoritePostList" />
+
         <table>
           <thead>
             <tr>

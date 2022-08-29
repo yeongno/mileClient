@@ -1,5 +1,6 @@
 @import "../mixins";
 @import "./Notice.scss";
+@import "./FavoritePostList.scss";
 .main_container {
   width: 100%;
   height: 100%;
@@ -10,9 +11,7 @@
     width: 900px;
     .header_container {
       display: flex;
-      min-height: 20vh;
       .notice_section {
-        @include Notice;
         height: 100%;
         width: 60%;
       }
@@ -24,10 +23,10 @@
       min-height: 200px;
       display: flex;
       .left_section {
-        width: 70%;
+        width: 75%;
       }
       .right_section {
-        width: 30%;
+        width: 25%;
       }
     }
   }

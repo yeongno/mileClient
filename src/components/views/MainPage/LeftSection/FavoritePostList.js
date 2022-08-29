@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPost } from "../../../../redux/_actions/post_action";
+import "../../../styles/MainPage/FavoritePostList.scss";
+import NameBar from "../commons/NameBar";
 
 function FavoritePostList() {
   const dispatch = useDispatch();
@@ -34,9 +36,8 @@ function FavoritePostList() {
 
   return (
     <div>
-      <div>
-        <h2>인기 페이지</h2>
-        <hr />
+      <div className="FavoritePostList_container">
+        <NameBar name="인기 게시글" url="/FavoritePostList" />
         <table>
           <thead>
             <tr>
