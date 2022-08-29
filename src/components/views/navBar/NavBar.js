@@ -6,6 +6,11 @@ import { logout } from "../../../redux/_actions/user_action";
 function NavBar() {
   const isAuth = useSelector((state) => state.user.isAuth);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/mainPage");
+  }, []);
+
   const goLogin = () => {
     navigate("/login");
   };
@@ -15,7 +20,7 @@ function NavBar() {
     window.localStorage.removeItem("name");
     window.localStorage.removeItem("Admin");
     dispatch(logout());
-    window.location.reload();
+    // window.location.reload();
   };
 
   return (

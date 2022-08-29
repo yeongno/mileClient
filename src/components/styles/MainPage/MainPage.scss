@@ -1,0 +1,34 @@
+@import "../mixins";
+@import "./Notice.scss";
+.main_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .inner_container_pc {
+    margin: 0 auto 0 auto;
+    width: 900px;
+    .header_container {
+      display: flex;
+      min-height: 20vh;
+      .notice_section {
+        @include Notice;
+        height: 100%;
+        width: 60%;
+      }
+      .account_section {
+        width: 40%;
+      }
+    }
+    .body_container {
+      min-height: 200px;
+      display: flex;
+      .left_section {
+        width: 70%;
+      }
+      .right_section {
+        width: 30%;
+      }
+    }
+  }
+}

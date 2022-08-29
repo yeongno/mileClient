@@ -9,8 +9,10 @@ import LoginPage from "./views/Athentication/LoginPage";
 import RegisterPage from "./views/Athentication/RegisterPage";
 import CommunityPage from "./views/Community/CommunityPage";
 import WritePost from "./views/Community/WritePost";
+import Footer from "./views/Foot/Footer";
 import Header from "./views/Header/Header";
 import LandingPage from "./views/LandingPage";
+import MainPage from "./views/MainPage/MainPage";
 import MenuBar from "./views/MenuBar/MenuBar";
 import NavBar from "./views/navBar/NavBar";
 
@@ -39,12 +41,14 @@ function App() {
         )}
 
         <Route path="/" element={<LandingPage1 />}>
+          <Route path="/mainPage" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/writePost" element={<WritePost />} />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
