@@ -2,21 +2,21 @@
 @import "./Notice.scss";
 @import "./FavoritePostList.scss";
 .main_container {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   position: relative;
 
   .inner_container_pc {
     margin: 0 auto 0 auto;
-    width: 900px;
+    width: 62vw;
     .header_container {
       display: flex;
       .notice_section {
-        height: 100%;
-        width: 60%;
+        height: 20vh;
+        width: 40vw;
       }
       .account_section {
-        width: 40%;
+        width: 22vw;
       }
     }
     .body_container {
