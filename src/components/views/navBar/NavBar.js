@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../redux/_actions/user_action";
 function NavBar() {
-  const isAuth = window.localStorage.getItem("userId");
+  const isAuth = useSelector((state) => state.user.isAuth);
   const navigate = useNavigate();
   const goLogin = () => {
     navigate("/login");

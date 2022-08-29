@@ -23,7 +23,7 @@ function Header() {
         <a className="modify">내 정보 변경</a>
         {auth.isAdmin === true && (
           <a className="admin" onClick={goManagement}>
-            관리자 페이지1
+            관리자 페이지
           </a>
         )}
       </div>
