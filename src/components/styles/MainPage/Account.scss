@@ -1,44 +1,89 @@
 .container_account {
-  margin-left: 2vw;
-  overflow: hidden;
-  height: 20vh;
-  width: 20vw;
-  padding-left: 10px;
-  padding-right: 10px;
+  height: 100%;
+  width: 100%;
+  // padding-left: 10px;
+  // padding-right: 10px;
+  padding: 2%;
   background: rgb(230, 235, 230);
+  margin-top: 5px;
   .top_account {
     display: flex;
+    height: 70%;
     .leftTop_account {
+      width: 30%;
+      height: 30%;
+      padding: 2%;
       img {
-        margin-top: 10px;
-        min-width: 50px;
-        min-height: 50px;
-
-        width: auto;
-        height: 12vh;
+        width: 100%;
+        height: 100%;
       }
     }
     .rightTop_account {
-      width: 16vw;
+      margin: auto;
+      width: 70%;
+      height: 70%;
       padding-left: 2%;
       .nameLabel_account {
-        margin-top: 10px;
-        height: 5vh;
+        font-weight: bold;
+        height: 50%;
+        .nameLabel1 {
+          color: black;
+          margin-left: 10px;
+        }
+        .nameLabel2 {
+          color: green;
+          margin-left: 10px;
+        }
       }
       hr {
-        background: rgb(180, 184, 180);
+        background-color: rgb(245, 245, 240);
       }
       .pointLabel_account {
-        height: 7vh;
+        height: 50%;
+        display: flex;
+        .realMoney_pointLabel {
+          width: 40%;
+          a {
+            margin-left: 10px;
+            color: gray;
+          }
+        }
+        .freeMoney_pointLabel {
+          width: 40%;
+
+          a {
+            margin-left: 10px;
+            color: gray;
+          }
+        }
+        .btn_getCash {
+          margin-left: 10px;
+          width: 20%;
+          color: green;
+          font-size: 15px;
+        }
       }
     }
   }
   .down_account {
+    color: gray;
+    font-weight: 300;
+    font-size: 13px;
     display: flex;
-    height: 8vh;
+    height: 30%;
     .leftDown_account {
+      margin: auto;
     }
     .rightDown_account {
+      display: inline-flex;
+      margin: auto;
+      button {
+        font-weight: bold;
+        width: auto;
+        height: auto;
+        border: none;
+        background: none;
+      }
     }
   }
 }

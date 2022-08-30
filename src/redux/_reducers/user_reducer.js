@@ -17,6 +17,7 @@ export default function (state = {}, action) {
       return {
         ...state,
         userData: action.payload,
+        name: action.payload.name,
         isAdmin: action.payload.isAdmin,
         isAuth: action.payload.isAuth,
       };
