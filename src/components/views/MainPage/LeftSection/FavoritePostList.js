@@ -1,3 +1,4 @@
+import { PartitionOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -27,10 +28,22 @@ function FavoritePostList() {
 
   const renderCards = Posts.map((posts, index) => {
     return (
-      <tr key={index}>
-        <td>{posts.title}</td>
-        <td>{posts.content} </td>
-      </tr>
+      <div key={index}>
+        <div className="favoritePost_container">
+          <div className="profileContainer_FavoritePostList">
+            <img src="/assets/profile.png" alt="" />
+          </div>
+          <div className="titleContainer_FavoritePostList">
+            <a>{posts.title}</a>
+          </div>
+          <div className="contentContainer_FavoritePostList">
+            <a>| {posts.content}</a>
+          </div>
+          <div className="createdATContainer_FavoritePostList">
+            <a>| 11/12</a>
+          </div>
+        </div>
+      </div>
     );
   });
 
@@ -38,15 +51,7 @@ function FavoritePostList() {
     <div>
       <div className="FavoritePostList_container">
         <NameBar name="인기 게시글" url="/FavoritePostList" />
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Content</th>
-            </tr>
-          </thead>
-          <tbody>{renderCards}</tbody>
-        </table>
+        {renderCards}
       </div>
     </div>
   );

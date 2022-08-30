@@ -42,6 +42,7 @@
         height: 50%;
         display: flex;
         .realMoney_pointLabel {
+          margin: auto;
           width: 40%;
           a {
             margin-left: 10px;
@@ -49,6 +50,7 @@
           }
         }
         .freeMoney_pointLabel {
+          margin: auto;
           width: 40%;
 
           a {
@@ -60,7 +62,8 @@
           margin-left: 10px;
           width: 20%;
           color: green;
-          font-size: 15px;
+          font-size: 20px;
+          font-weight: bold;
         }
       }
     }
@@ -79,10 +82,12 @@
       margin: auto;
       button {
         font-weight: bold;
+        font-size: 13px;
         width: auto;
         height: auto;
         border: none;
         background: none;
+        cursor: pointer;
       }
     }
   }
