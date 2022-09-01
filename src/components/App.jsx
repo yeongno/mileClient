@@ -8,6 +8,7 @@ import UserManagement from "./views/AdminPage/UserManagement";
 import LoginPage from "./views/Athentication/LoginPage";
 import RegisterPage from "./views/Athentication/RegisterPage";
 import CommunityPage from "./views/Community/CommunityPage";
+import OnTest from "./views/Community/OnTest";
 import WritePost from "./views/Community/WritePost";
 import Footer from "./views/Foot/Footer";
 import Header from "./views/Header/Header";
@@ -46,9 +47,10 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/writePost" element={<WritePost />} />
+          <Route path="/onTest" element={<OnTest />} />
         </Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

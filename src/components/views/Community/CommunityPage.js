@@ -8,13 +8,18 @@ function CommunityPage() {
   const onWrite = () => {
     navigate("/writePost");
   };
+  const onTest = () => {
+    navigate("/onTest");
+  };
   return (
     <div className="community_container">
       <nav className="community_menu">
         <Button className="write_post" onClick={onWrite}>
           글쓰기
         </Button>
-        <Button className="mylist_post">나의 글 목록</Button>
+        <Button className="mylist_post" onClick={onTest}>
+          나의 글 목록
+        </Button>
       </nav>
       <PostList />
     </div>
