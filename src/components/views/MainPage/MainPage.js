@@ -5,7 +5,7 @@ import LeftSection from "./LeftSection";
 import DivisionPostList from "./LeftBottom/DivisionPostList";
 import Notice from "./Notice";
 import RankingBoard from "./RankingBoard";
-import RightSection from "./RightSection/RightSection";
+import RightSection from "./RightSection";
 import RightBottom from "./RightBottom/RightBottom";
 function MainPage() {
   //NavBar에서 useEffect로 해당 컴포넌트 초기 실행

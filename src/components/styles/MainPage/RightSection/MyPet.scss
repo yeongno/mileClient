@@ -1,0 +1,67 @@
+.myPet_container {
+  margin-top: 20px;
+  height: 30%;
+  .myPet_inner {
+    background: rgb(230, 235, 230);
+    padding: 0.4rem;
+    .header_myPet {
+      height: 1.5rem;
+      width: 100%;
+      a {
+        color: black;
+        margin-left: 5%;
+      }
+      span {
+        margin-left: 55%;
+      }
+    }
+    .image_myPet {
+      div {
+        height: 5rem;
+        width: 100%;
+        padding-left: 4rem;
+        padding-top: 0.5rem;
+        img {
+          height: 4rem;
+          width: 4rem;
+        }
+      }
+    }
+    .name_myPet {
+      text-align: center;
+      a {
+        color: black;
+        padding-right: 0.3rem;
+      }
+    }
+    .detail_myPet {
+      text-align: center;
+      a {
+        font-size: smaller;
+        color: gray;
+        padding-right: 0.3rem;
+      }
+    }
+    .expBar_myPet {
+      height: 2rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      div {
+        background: white;
+        height: 150%;
+        border: 2px solid rgb(165, 240, 115);
+        border-radius: 3px;
+      }
+    }
+    .btn_myPet {
+      text-align: center;
+      button {
+        font-weight: bold;
+        background: none;
+        border: none;
+      }
+    }
+  }
+}
