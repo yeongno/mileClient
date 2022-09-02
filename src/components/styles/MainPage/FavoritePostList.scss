@@ -2,12 +2,16 @@
   width: 100%;
   height: 100%;
   .favoritePost_container {
+    padding-bottom: 5px;
+    padding-top: 5px;
     display: flex;
-    height: 55px;
-    margin-top: 20px;
+    height: 30px;
+    border: 1px solid rgb(191, 199, 199);
+    border-top: none;
+    border-left: none;
+    border-right: none;
     .profileContainer_FavoritePostList {
-      width: 20%;
-      padding: 2px;
+      width: 10%;
       img {
         width: 100%;
         height: 100%;
@@ -22,12 +26,17 @@
       }
     }
     .contentContainer_FavoritePostList {
+      a {
+        color: rgb(191, 189, 179);
+      }
       margin: auto;
-
       width: 28%;
     }
     .createdATContainer_FavoritePostList {
-      margin: auto;
+      margin-right: 10px;
+      a {
+        color: rgb(191, 189, 199);
+      }
     }
   }
 }

@@ -33,5 +33,18 @@
         width: 25%;
       }
     }
+    .bottom_container {
+      display: flex;
+      flex-wrap: wrap;
+      .topBottom_section {
+        width: 100%;
+      }
+      .leftBottom_section {
+        width: 75%;
+      }
+      .rightBottom_section {
+        width: 25%;
+      }
+    }
   }
 }

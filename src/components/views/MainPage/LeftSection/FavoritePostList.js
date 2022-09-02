@@ -11,6 +11,7 @@ function FavoritePostList() {
 
   const navigate = useNavigate();
   const [Posts, setPosts] = useState([]);
+  const pageLabel = "인기 게시판";
   useEffect(() => {
     fetchPostList();
   }, []);
@@ -27,6 +28,9 @@ function FavoritePostList() {
   };
 
   const renderCards = Posts.map((posts, index) => {
+    if (index >= 8) {
+      return;
+    }
     return (
       <div key={index}>
         <div className="favoritePost_container">
@@ -37,7 +41,7 @@ function FavoritePostList() {
             <a>{posts.title}</a>
           </div>
           <div className="contentContainer_FavoritePostList">
-            <a>| {posts.content}</a>
+            <a>| {pageLabel}</a>
           </div>
           <div className="createdATContainer_FavoritePostList">
             <a>| 11/12</a>

@@ -60,17 +60,6 @@ function NoticeList() {
   const paginationRef = useRef(null);
   SwiperCore.use([Navigation, Pagination, Autoplay]);
   const swiperParams = {
-    navigation: {
-      prevEl: navigationPrevRef.current,
-      nextEl: navigationNextRef.current,
-    },
-    pagination: {
-      el: paginationRef,
-      clickable: true,
-      renderBullet: (index, className) => {
-        return `<span class="${className}">${index + 1}</span>`;
-      },
-    },
     onBeforeInit: (swiper) => {
       swiper.params.navigation.prevEl = navigationPrevRef.current;
       swiper.params.navigation.nextEl = navigationNextRef.current;
@@ -97,13 +86,6 @@ function NoticeList() {
         <SwiperSlide>
           <img src="/assets/notice2.jpg" alt="" className="notice1" />
         </SwiperSlide>
-        <Button ref={navigationPrevRef}>
-          <LeftOutlined />
-        </Button>
-        <Button ref={navigationNextRef}>
-          <RightOutlined />
-        </Button>
-        {/* <span ref={paginationRef} /> */}
       </StyledSwiper>
     </div>
   );
@@ -113,13 +95,4 @@ const StyledSwiper = styled(Swiper)`
   position: relative;
   width: 752px;
   height: 752px;
-`;
-
-const LeftButton = styled(Button)`
-  position: absolute;
-  margin-left: 200px;
-  margin-bottom: 2000px;
-  background: black;
-  width: 20px;
-  height: 20px;
 `;

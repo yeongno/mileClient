@@ -9,6 +9,7 @@ function DivisionPostList() {
 
   const navigate = useNavigate();
   const [Posts, setPosts] = useState([]);
+  const pageLabel = "사단 게시판";
   useEffect(() => {
     fetchPostList();
   }, []);
@@ -25,28 +26,34 @@ function DivisionPostList() {
   };
 
   const renderCards = Posts.map((posts, index) => {
+    if (index >= 8) {
+      return;
+    }
     return (
-      <tr key={index}>
-        <td>{posts.title}</td>
-        <td>{posts.content} </td>
-      </tr>
+      <div key={index}>
+        <div className="favoritePost_container">
+          <div className="profileContainer_FavoritePostList">
+            <img src="/assets/profile.png" alt="" />
+          </div>
+          <div className="titleContainer_FavoritePostList">
+            <a>{posts.title}</a>
+          </div>
+          <div className="contentContainer_FavoritePostList">
+            <a>| {pageLabel}</a>
+          </div>
+          <div className="createdATContainer_FavoritePostList">
+            <a>| 11/12</a>
+          </div>
+        </div>
+      </div>
     );
   });
 
   return (
     <div>
-      <div>
-        <NameBar name="사단 게시글" url="/FavoritePostList" />
-
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Content</th>
-            </tr>
-          </thead>
-          <tbody>{renderCards}</tbody>
-        </table>
+      <div className="FavoritePostList_container">
+        <NameBar name="69사단" url="/FavoritePostList" />
+        {renderCards}
       </div>
     </div>
   );

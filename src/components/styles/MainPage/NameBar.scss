@@ -1,15 +1,20 @@
 .nameBar_container {
   margin-top: 20px;
-  border: 2px solid rgb(165, 240, 115);
+  margin-bottom: 10px;
+  border: 3px solid rgb(165, 240, 115);
   border-left: none;
+  border-top: none;
   border-right: none;
-  border-radius: 3px;
   display: flex;
+  padding-bottom: 2px;
   .name_NameBar {
+    font-size: large;
+
     position: absolute;
     font-weight: bold;
   }
   .btn_NameBar {
+    margin-top: 4px;
     margin-left: 90%;
   }
 }

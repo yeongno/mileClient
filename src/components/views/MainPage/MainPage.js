@@ -2,8 +2,11 @@ import React from "react";
 import "../../styles/MainPage/MainPage.scss";
 import Account from "./Account";
 import LeftSection from "./LeftSection";
+import DivisionPostList from "./LeftBottom/DivisionPostList";
 import Notice from "./Notice";
-import RightSection from "./RightSection";
+import RankingBoard from "./RankingBoard";
+import RightSection from "./RightSection/RightSection";
+import RightBottom from "./RightBottom/RightBottom";
 function MainPage() {
   //NavBar에서 useEffect로 해당 컴포넌트 초기 실행
   return (
@@ -23,6 +26,19 @@ function MainPage() {
           </div>
           <div className="right_section">
             <RightSection />
+          </div>
+        </div>
+        <div>
+          <div className="bottom_container">
+            <div className="topBottom_section">
+              <RankingBoard />
+            </div>
+            <div className="leftBottom_section">
+              <DivisionPostList />
+            </div>
+            <div className="rightBottom_section">
+              <RightBottom />
+            </div>
           </div>
         </div>
       </div>
