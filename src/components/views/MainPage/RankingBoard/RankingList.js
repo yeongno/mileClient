@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from "antd";
+import "../../../styles/MainPage/RankingList.scss";
 
 function RankingList() {
   return (
@@ -16,84 +16,184 @@ function RankingList() {
           width: "100%",
         }}
       >
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
-          <div style={{ width: "20%", height: "100px" }}>
-            <img
-              style={{ width: "100%", height: "100%" }}
-              src={"/assets/profile.png"}
-            />
+        <div style={{ width: "20%", position: "relative" }}>
+          <div className="rankCard_container" style={{}}>
+            <div className="rankCardFit">
+              <div className="rankTop_container">
+                <div className="rankLeftTop_section">
+                  <img src={"/assets/profile.png"} />
+                </div>
+                <div className="rankRightTop_section">
+                  <a>1위</a>
+                  <span>69사단</span>
+                </div>
+              </div>
+              <div className="rankBottom_container">
+                <span>육군</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

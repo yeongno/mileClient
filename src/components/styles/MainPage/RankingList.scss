@@ -1,0 +1,68 @@
+.rankingList_container {
+  margin-top: 2rem;
+  .rankingTop_container {
+    margin-bottom: 1rem;
+    text-align: center;
+    a {
+      font-size: large;
+      color: black;
+      font-weight: bold;
+    }
+  }
+  .rankCard_container {
+    width: 100%;
+    height: 100px;
+    padding: 1rem;
+    .rankCardFit {
+      width: 100%;
+      border: solid 1px gray;
+      .rankTop_container {
+        display: flex;
+        height: 80%;
+        width: 100%;
+        .rankLeftTop_section {
+          height: 100%;
+          width: 40%;
+          padding: 10px;
+
+          img {
+            border-radius: 50px;
+            width: 100%;
+            height: 100%;
+            border: solid 1px gray;
+          }
+        }
+        .rankRightTop_section {
+          margin: auto;
+          display: block;
+          a {
+            text-align: right;
+            display: inline-block;
+            width: 100%;
+            color: black;
+            font-weight: bold;
+          }
+          span {
+            margin-top: 10px;
+            text-align: right;
+            display: inline-block;
+            width: 100%;
+          }
+        }
+      }
+      .rankBottom_container {
+        width: 101%;
+        height: 20px;
+        background: gray;
+        span {
+          font-size: xx-small;
+          color: black;
+          padding-right: 13px;
+          text-align: right;
+          width: 100%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
