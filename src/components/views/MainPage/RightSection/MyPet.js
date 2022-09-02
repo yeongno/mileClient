@@ -28,7 +28,7 @@ function MyPet() {
         <div className="expBar_myPet">
           <div></div>
         </div>
-        <hr />
+        <div className="partition_MyPet"></div>
         <div className="btn_myPet">
           <button>키우러 가기</button>
         </div>

@@ -1,6 +1,6 @@
 .myPet_container {
   margin-top: 20px;
-  height: 30%;
+  height: 12rem;
   .myPet_inner {
     background: rgb(230, 235, 230);
     padding: 0.4rem;
@@ -17,12 +17,12 @@
     }
     .image_myPet {
       div {
-        height: 5rem;
+        height: 3rem;
         width: 100%;
         padding-left: 4rem;
         padding-top: 0.5rem;
         img {
-          height: 4rem;
+          height: 100%;
           width: 4rem;
         }
       }
@@ -43,17 +43,26 @@
       }
     }
     .expBar_myPet {
-      height: 2rem;
+      height: 1.5rem;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
-      padding-top: 0.7rem;
+      padding-top: 0.4rem;
       padding-bottom: 0.7rem;
       div {
         background: white;
-        height: 150%;
+        height: 0.8rem;
         border: 2px solid rgb(165, 240, 115);
         border-radius: 3px;
       }
+    }
+    .partition_MyPet {
+      height: 1px;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border: solid 1px gray;
+      margin-left: 1rem;
+      margin-right: 1rem;
     }
     .btn_myPet {
       text-align: center;
