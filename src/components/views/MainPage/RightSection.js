@@ -11,7 +11,7 @@ function RightSection() {
     >
       <MyPet />
       <AppAD />
-      {/* <PowerRank /> */}
+      <PowerRank />
     </div>
   );
 }

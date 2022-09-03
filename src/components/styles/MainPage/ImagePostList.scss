@@ -1,0 +1,30 @@
+.imagePostList_container {
+  .imagePostList_inner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .space_inner {
+      padding: 0.5rem;
+      width: 20%;
+      background: white;
+      .eachCard_container {
+        padding: 0.5rem;
+        background: rgb(230, 235, 230);
+        margin: auto;
+        text-align: center;
+        img {
+          height: 4rem;
+          width: 100%;
+        }
+        a {
+          color: black;
+          line-height: 1px;
+          font-size: 0.9em;
+          padding: 1rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.powerRank_conateiner {
+  margin-top: 1rem;
+
+  .powerRank_spaceInner {
+    background: rgb(230, 235, 230);
+    padding: 0.7rem;
+    .powerRank_inner {
+      .title_powerRank {
+        color: black;
+        font-weight: bold;
+      }
+
+      .board_container {
+        .eachCard_inner {
+          text-align: center;
+          margin-bottom: 0.25rem;
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+.partition_powerRank {
+  height: 1px;
+  background: gray;
+  margin-bottom: 0.4rem;
+}
+.bottom_powerRank {
+  text-align: center;
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}

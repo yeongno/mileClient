@@ -3,7 +3,14 @@ import "../../../styles/MainPage/RightSection/AppAD.scss";
 function AppAD() {
   return (
     <div className="ad_container">
-      <a>어플홍보페이지</a>
+      <div>
+        <a>
+          어플 <br />
+          홍보
+          <br />
+          페이지
+        </a>
+      </div>
     </div>
   );
 }

@@ -1,92 +1,77 @@
 import React from "react";
 import { Col, Row } from "antd";
 import NameBar from "../commons/NameBar";
+import "../../../styles/MainPage/ImagePostList.scss";
 function ImagePostList() {
   return (
-    <div style={{ width: "100%" }}>
+    <div
+      className="
+    imagePostList_container
+    "
+    >
       <NameBar name="이미지 게시글" url="/FavoritePostList" />
-      <Row gutter={[16, 16]}>
-        <Col lg={6} md={8} xs={24}>
-          <div style={{ position: "relative" }}>
-            <div style={{ width: "100%", height: "100px" }}>
-              <img
-                style={{ width: "100%", height: "100%" }}
-                src={"/assets/profile.png"}
-              />
-            </div>
+      <div className="imagePostList_inner">
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
           </div>
-        </Col>
-        <Col lg={6} md={8} xs={24}>
-          <div style={{ position: "relative" }}>
-            <div style={{ width: "100%", height: "100px" }}>
-              <img
-                style={{ width: "100%", height: "100%" }}
-                src={"/assets/profile.png"}
-              />
-            </div>
+        </div>
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
           </div>
-        </Col>
-        <Col lg={6} md={8} xs={24}>
-          <div style={{ position: "relative" }}>
-            <div style={{ width: "100%", height: "100px" }}>
-              <img
-                style={{ width: "100%", height: "100%" }}
-                src={"/assets/profile.png"}
-              />
-            </div>
+        </div>
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
           </div>
-        </Col>
-        <Col lg={6} md={8} xs={24}>
-          <div style={{ position: "relative" }}>
-            <div style={{ width: "100%", height: "100px" }}>
-              <img
-                style={{ width: "100%", height: "100%" }}
-                src={"/assets/profile.png"}
-              />
-            </div>
+        </div>
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
           </div>
-        </Col>
-        <Col lg={6} md={8} xs={24}>
-          <div style={{ position: "relative" }}>
-            <div style={{ width: "100%", height: "100px" }}>
-              <img
-                style={{ width: "100%", height: "100%" }}
-                src={"/assets/profile.png"}
-              />
-            </div>
+        </div>
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
           </div>
-        </Col>
-        <Col lg={6} md={8} xs={24}>
-          <div style={{ position: "relative" }}>
-            <div style={{ width: "100%", height: "100px" }}>
-              <img
-                style={{ width: "100%", height: "100%" }}
-                src={"/assets/profile.png"}
-              />
-            </div>
+        </div>
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
           </div>
-        </Col>
-        <Col lg={6} md={8} xs={24}>
-          <div style={{ position: "relative" }}>
-            <div style={{ width: "100%", height: "100px" }}>
-              <img
-                style={{ width: "100%", height: "100%" }}
-                src={"/assets/profile.png"}
-              />
-            </div>
+        </div>
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
           </div>
-        </Col>
-        <Col lg={6} md={8} xs={24}>
-          <div style={{ position: "relative" }}>
-            <div style={{ width: "100%", height: "100px" }}>
-              <img
-                style={{ width: "100%", height: "100%" }}
-                src={"/assets/profile.png"}
-              />
-            </div>
+        </div>
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
           </div>
-        </Col>
-      </Row>
+        </div>
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
+          </div>
+        </div>
+        <div className="space_inner">
+          <div className="eachCard_container">
+            <img src={"/assets/profile.png"} />
+            <a>제목이다냥sidsidisid</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

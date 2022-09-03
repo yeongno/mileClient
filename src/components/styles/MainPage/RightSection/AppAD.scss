@@ -1,3 +1,14 @@
 .ad_container {
-  height: 33%;
+  margin-top: 1rem;
+  height: 17rem;
+  background: blue;
+  padding-top: 3rem;
+  div {
+    height: 100%;
+    text-align: center;
+    a {
+      color: white;
+      font-size: 2rem;
+    }
+  }
 }
