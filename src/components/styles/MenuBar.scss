@@ -1,18 +1,48 @@
 @import "mixins";
 .menu_container {
   @include flex-center;
-  width: 100%;
-  background: yellow;
+  background: rgb(91, 228, 157);
   display: block;
 
-  .btn_container {
-    margin-left: calc(20%);
+  .btnContainer_MenuBar {
+    @include inner_container_pc;
+    padding-left: 12rem;
+    height: 2.5rem;
+    display: flex;
+    .leftBtn_MenuBar {
+      width: 70%;
 
-    button {
-      border-color: gray;
-      border: 2px;
-      border-radius: 20px;
-      margin-right: 10%;
+      padding-top: 0.5rem;
+      button {
+        color: white;
+        border: none;
+        background: none;
+        border-color: gray;
+        border: 2px;
+        margin-right: 10%;
+      }
+    }
+    .rightBtn_MenuBar {
+      display: flex;
+      width: 30%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      background: rgb(71, 186, 126);
+
+      button {
+        color: white;
+        border: none;
+        background: none;
+        border-color: gray;
+        border: 2px;
+      }
+      .partition_MenuBar {
+        margin: auto;
+        width: 0.1rem;
+        border: none;
+        height: 70%;
+        background: white;
+      }
     }
   }
 }

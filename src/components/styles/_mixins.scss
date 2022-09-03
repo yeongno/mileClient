@@ -2,3 +2,8 @@
   display: flex;
   align-items: center;
 }
+
+@mixin inner_container_pc {
+  margin: 0 auto;
+  width: 56.5rem;
+}

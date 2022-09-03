@@ -18,10 +18,17 @@ function MenuBar() {
         TurnOff === "MenuBarTurnOff" ? "TurnOffMenuBar" : "menu_container"
       }
     >
-      <div className="btn_container">
-        <Button onClick={onCommunity}>커뮤니티</Button>
-        <Button>공지사항</Button>
-        <Button>다운로드</Button>
+      <div className="btnContainer_MenuBar">
+        <div className="leftBtn_MenuBar">
+          <button onClick={onCommunity}>전체 게시판</button>
+          <button>사단/근무지 별 게시판</button>
+          <button>펫 게시판</button>
+        </div>
+        <div className="rightBtn_MenuBar">
+          <button style={{ marginRight: "0.5rem" }}>멘토 찾기</button>
+          <div className="partition_MenuBar" />
+          <button style={{ marginLeft: "0.5rem" }}>멘티 찾기</button>
+        </div>
       </div>
     </nav>
   );
