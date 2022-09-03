@@ -51,15 +51,28 @@
 // export default NavBar;
 
 import { Switch } from "antd";
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/NavBar.scss";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/mainPage");
+  }, []);
+  const onHome = () => {
+    navigate("/mainPage");
+  };
   return (
     <div className="navBar_container">
       <div className="navBar_inner">
         <div className="logo_navBar">
-          <img src="/assets/commons/brand.png" alt="" />
+          <img
+            src="/assets/commons/brand.png"
+            alt=""
+            onClick={onHome}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <div className="search_navBar">
           <input className="inputSearch_navBar" placeholder="통합 검색"></input>

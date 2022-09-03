@@ -1,4 +1,8 @@
 @import "mixins";
+
+button {
+  cursor: pointer;
+}
 .menu_container {
   @include flex-center;
   background: rgb(91, 228, 157);
@@ -20,6 +24,9 @@
         border-color: gray;
         border: 2px;
         margin-right: 10%;
+        &:hover {
+          color: black;
+        }
       }
     }
     .rightBtn_MenuBar {
@@ -35,6 +42,9 @@
         background: none;
         border-color: gray;
         border: 2px;
+        &:hover {
+          color: black;
+        }
       }
       .partition_MenuBar {
         margin: auto;
