@@ -18,9 +18,7 @@ function MyPet() {
         </div>
         <div className="name_myPet">
           <a>효은이</a>
-          <span>
-            <CloudSyncOutlined />
-          </span>
+          <img src="/assets/commons/retweet.png" alt="" />
         </div>
         <div className="detail_myPet">
           <a>ATK 30 / DEF 23</a>

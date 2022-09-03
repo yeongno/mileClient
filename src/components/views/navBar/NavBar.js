@@ -50,6 +50,7 @@
 
 // export default NavBar;
 
+import { Switch } from "antd";
 import React from "react";
 import "../../styles/NavBar.scss";
 
@@ -66,7 +67,17 @@ function NavBar() {
             <img src="/assets/commons/searchOn.png" alt="" />
           </div>
         </div>
-        <div className="options_navBar"></div>
+        <div className="options_navBar">
+          <div className="ano_navBar">
+            <a>익명 활성화</a>
+            <Switch size="small" style={{ alignSelf: "center" }} />
+          </div>
+          <div className="noti_navBar">
+            <div className="imgNavBar_container">
+              <img src="/assets/commons/bell.png" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
