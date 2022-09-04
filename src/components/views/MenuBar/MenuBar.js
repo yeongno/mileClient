@@ -5,19 +5,16 @@ import { useNavigate } from "react-router-dom";
 import "../../styles/MenuBar.scss";
 
 function MenuBar() {
-  //비활성화 상태값이 들어올시 값을 받아와서 적용
+  /**비활성화 상태값이 들어올시 값을 받아와서 적용 */
   const TurnOff = useSelector((state) => state.turn.turnOff);
   const navigate = useNavigate();
+  useEffect(() => {}, []);
 
   const onCommunity = () => {
     navigate("/community");
   };
   return (
-    <nav
-      className={
-        TurnOff === "MenuBarTurnOff" ? "TurnOffMenuBar" : "menu_container"
-      }
-    >
+    <nav className={TurnOff === true ? "TurnOffMenuBar" : "menu_container"}>
       <div className="btnContainer_MenuBar">
         <div className="leftBtn_MenuBar">
           <button onClick={onCommunity}>전체 게시판</button>

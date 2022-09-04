@@ -1,12 +1,22 @@
 import { CheckOutlined, DollarOutlined, PlusOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "../../../styles/MainPage/Account.scss";
 import { Switch } from "antd";
+import { logout } from "../../../../redux/_actions/user_action";
 
 function AccountSection() {
   const Name = useSelector((state) => state.user.name);
-  // const Name = window.localStorage.getItem("name");
+  const isAuth = useSelector((state) => state.user.isAuth);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const goLogout = () => {
+    dispatch(logout());
+  };
+  const goLogIn = () => {
+    navigate("/login");
+  };
   return (
     <div className="container_account">
       <div className="top_account">
@@ -52,7 +62,8 @@ function AccountSection() {
         <div className="rightDown_account">
           <button>회원정보 변경</button>
           {" / "}
-          <button>로그 아웃</button>
+          {isAuth && <button onClick={goLogout}>로그 아웃</button>}
+          {!isAuth && <button onClick={goLogIn}>로그인</button>}
         </div>
       </div>
     </div>

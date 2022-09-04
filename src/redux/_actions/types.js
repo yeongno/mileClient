@@ -5,5 +5,4 @@ export const LOGOUT_USER = "logout_user";
 export const POST_GO = "post_go";
 export const POST_GET = "post_get";
 export const POST_ONEGET = "post_oneget";
-export const TURNOFF_SECTION = "turnoff_section";
-export const TURNON_SECTION = "turnon_section";
+export const TURNOFF_MENUBAR = "turnoff_menuBar";

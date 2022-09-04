@@ -1,11 +1,8 @@
-import { TURNOFF_SECTION, TURNON_SECTION } from "../_actions/types";
+import { TURNOFF_MENUBAR } from "../_actions/types";
 
 export default function turn(state = {}, action) {
   switch (action.type) {
-    case TURNON_SECTION:
-      return { ...state, turnOn: action.value };
-      break;
-    case TURNOFF_SECTION:
+    case TURNOFF_MENUBAR:
       return { ...state, turnOff: action.value };
       break;
     default:
