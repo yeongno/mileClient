@@ -6,3 +6,4 @@ export const POST_GO = "post_go";
 export const POST_GET = "post_get";
 export const POST_ONEGET = "post_oneget";
 export const TURNOFF_MENUBAR = "turnoff_menuBar";
+export const TURNOFF_SEARCH = "turnoff_search";

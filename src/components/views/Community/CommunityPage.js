@@ -1,16 +1,27 @@
 import { Button } from "antd";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import {
+  MenuTurnOff,
+  SearchTurnOff,
+} from "../../../redux/_actions/turn_action";
 import PostList from "./PostList";
 
 function CommunityPage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const onWrite = () => {
     navigate("/writePost");
   };
   const onTest = () => {
     navigate("/onTest");
   };
+  useEffect(() => {
+    dispatch(SearchTurnOff(true));
+    dispatch(MenuTurnOff(true));
+  }, []);
+
   return (
     <div className="community_container">
       <nav className="community_menu">

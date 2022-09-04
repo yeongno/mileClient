@@ -9,13 +9,17 @@ import RightSection from "./RightSection";
 import RightBottom from "./RightBottom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { MenuTurnOff } from "../../../redux/_actions/turn_action";
+import {
+  MenuTurnOff,
+  SearchTurnOff,
+} from "../../../redux/_actions/turn_action";
 function MainPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     /** 메인페이지 랜더링 될 시 MenuBar의 TurnOff 값을 false로 바꿈*/
     dispatch(MenuTurnOff(false));
+    dispatch(SearchTurnOff(false));
   }, []);
 
   //NavBar에서 useEffect로 해당 컴포넌트 초기 실행

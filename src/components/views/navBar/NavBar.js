@@ -54,6 +54,7 @@ import { Switch } from "antd";
 import React, { useEffect } from "react";
 import "../../styles/NavBar.scss";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -63,6 +64,7 @@ function NavBar() {
   const onHome = () => {
     navigate("/mainPage");
   };
+  const TurnOff = useSelector((state) => state.turn.turnOffSearch);
   return (
     <div className="navBar_container">
       <div className="navBar_inner">
@@ -74,12 +76,20 @@ function NavBar() {
             style={{ cursor: "pointer" }}
           />
         </div>
-        <div className="search_navBar">
-          <input className="inputSearch_navBar" placeholder="통합 검색"></input>
-          <div className="iconSearch_navBar">
-            <img src="/assets/commons/searchOn.png" alt="" />
-          </div>
+        <div className="searchNav_container">
+          {!TurnOff && (
+            <div className="search_navBar">
+              <input
+                className="inputSearch_navBar"
+                placeholder="통합 검색"
+              ></input>
+              <div className="iconSearch_navBar">
+                <img src="/assets/commons/searchOn.png" alt="" />
+              </div>
+            </div>
+          )}
         </div>
+
         <div className="options_navBar">
           <div className="ano_navBar">
             <a>익명 활성화</a>
