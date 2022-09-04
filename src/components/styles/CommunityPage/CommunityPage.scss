@@ -1,0 +1,11 @@
+.navBarCom_container {
+}
+.bodyCom_container {
+  display: flex;
+  .leftCom_container {
+    width: 75%;
+  }
+  .rightCom_container {
+    width: 25%;
+  }
+}
