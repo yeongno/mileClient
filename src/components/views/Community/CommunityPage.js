@@ -7,7 +7,7 @@ import {
   SearchTurnOff,
 } from "../../../redux/_actions/turn_action";
 import LeftSection from "./LeftSection";
-import NavBarCom from "./NavBarCom";
+import NavBarCom from "./MenuBarCom";
 import PostList from "./PostList";
 import RightSection from "./RightSection";
 import "../../styles/CommunityPage/CommunityPage.scss";
