@@ -6,10 +6,10 @@ export default function (state = {}, action) {
       return { ...state, postSuc: action.payload };
       break;
     case POST_GET:
-      return { ...state, postSuc: action.payload };
+      return { ...state, postSuc: action.payload, posts:action.payload.posts  };
       break;
     case POST_ONEGET:
-      return { ...state, postSuc: action.payload };
+      return { ...state, postSuc: action.payload};
       break;
     default:
       return state;

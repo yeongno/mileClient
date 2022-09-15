@@ -12,6 +12,11 @@ export function postGo(dataToSubmit1) {
   };
 }
 
+/**
+ * 해당하는 토픽으로 글 목록을 가져온다.
+ * @param {topic:"string"}  
+ * @returns posts 
+ */
 export function getPost(dataToSubmit1) {
   const request = axios
     .post("/api/posts/getPost", dataToSubmit1)
@@ -23,6 +28,11 @@ export function getPost(dataToSubmit1) {
   };
 }
 
+/**
+ * postId로 해당 게시물을 가져온다.
+ * @param {_id:postFrom} dataToSubmit1 
+ * @returns posts
+ */
 export function getOnePost(dataToSubmit1) {
   const request = axios
     .post("/api/posts/getOnePost", dataToSubmit1)
@@ -33,3 +43,5 @@ export function getOnePost(dataToSubmit1) {
     payload: request,
   };
 }
+
+
