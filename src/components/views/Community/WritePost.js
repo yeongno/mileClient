@@ -29,14 +29,14 @@ function WritePost() {
     };
     dispatch(postGo(body)).then((response) => {
       if (response.payload.success) {
-        alert("Successed to post up");
+        // alert("Successed to post up");
       } else {
         alert("Failed to post up");
       }
     });
     message.success("게시글을 작성하였습니다.");
 
-    window.location.reload();
+    // window.location.reload();
   };
 
   const { TextArea } = Input;

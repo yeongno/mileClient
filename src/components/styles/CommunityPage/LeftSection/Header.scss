@@ -1,0 +1,17 @@
+.containerHeader_LeftSection {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  p {
+    align-self: center;
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    &:first-child {
+      font-size: 1.3em;
+    }
+  }
+  .partitionHeader_LeftSection {
+    width: 0.7rem;
+  }
+}
