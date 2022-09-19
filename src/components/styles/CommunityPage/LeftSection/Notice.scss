@@ -1,17 +1,19 @@
 @import "../../colors.scss";
 .noticeContainer_ListSection {
   display: flex;
-  height: 2rem;
-  background: $lightGray-color;
   flex-wrap: wrap;
-
+  background-color: $lightGray-color;
+  overflow: hidden;
   p {
-    color: gray;
+    padding: 0.5rem;
+    color: black;
     align-self: center;
     text-align: center;
     margin: 0;
     font-size: 0.8em;
     &:nth-child(1) {
+      color: gray;
+
       width: 10%;
     }
     &:nth-child(2) {

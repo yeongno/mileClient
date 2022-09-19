@@ -13,15 +13,19 @@
 .ListContainer_ListSection {
   flex-wrap: wrap;
   display: flex;
-  height: 2rem;
+  padding-bottom: -10px;
 
   p {
-    color: gray;
+    padding: 0.5rem;
+
+    color: black;
     align-self: center;
     text-align: center;
     margin: 0;
     font-size: 0.8em;
     &:nth-child(1) {
+      color: gray;
+
       width: 10%;
     }
     &:nth-child(2) {

@@ -7,8 +7,14 @@
     margin: 0;
     font-size: 1em;
     font-weight: bold;
+
     &:first-child {
       font-size: 1.3em;
+    }
+    &:last-child {
+      cursor: pointer;
+      width: auto;
+      padding-left: 35%;
     }
   }
   .partitionHeader_LeftSection {

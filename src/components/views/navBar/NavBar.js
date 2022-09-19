@@ -59,7 +59,7 @@ import { useSelector } from "react-redux";
 function NavBar() {
   const navigate = useNavigate();
   useEffect(() => {
-    navigate("/mainPage");
+    // navigate("/mainPage");
   }, []);
   const onHome = () => {
     navigate("/mainPage");

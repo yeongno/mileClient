@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../../styles/CommunityPage/LeftSection/Header.scss";
 function Header() {
+  const navigate = useNavigate();
+  const goWrite = () => {
+    navigate("/writePost");
+  };
   return (
     <div className="containerHeader_LeftSection">
       <p>전체 게시판</p>
@@ -19,6 +24,8 @@ function Header() {
       <p>자랑</p>
       <div className="partitionHeader_LeftSection" />
       <p>후기</p>
+      <div className="partitionHeader_LeftSection" />
+      <p onClick={goWrite}>글쓰기</p>
     </div>
   );
 }
