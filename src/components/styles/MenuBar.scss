@@ -32,12 +32,11 @@ button {
     .rightBtn_MenuBar {
       display: flex;
       width: 30%;
-      padding-left: 1rem;
-      padding-right: 1rem;
       background: rgb(71, 186, 126);
 
       button {
         color: white;
+        width: 50%;
         border: none;
         background: none;
         border-color: gray;

@@ -63,7 +63,7 @@ function Footer(props) {
   return (
     <div className="footerContainer_LeftSection" style={{ display: "flex" }}>
       <div className="paginationBar" style={{ display: "flex" }}>
-        <LeftOutlined onClick={onPrePage} style={{ display: "flex" }} />
+        <LeftOutlined onClick={onPrePage} />
         {renderCards} <RightOutlined onClick={onNextPage} />
       </div>
       <div className="searchingBar"></div>
