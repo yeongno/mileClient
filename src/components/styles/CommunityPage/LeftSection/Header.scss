@@ -1,3 +1,4 @@
+@import "../../colors.scss";
 .containerHeader_LeftSection {
   display: flex;
   margin-top: 1rem;
@@ -12,9 +13,15 @@
       font-size: 1.3em;
     }
     &:last-child {
+      margin-left: 42%;
       cursor: pointer;
       width: auto;
-      padding-left: 35%;
+      color: white;
+      background: $basic-color;
+      padding: 0.3rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-radius: 3px;
     }
   }
   .partitionHeader_LeftSection {
