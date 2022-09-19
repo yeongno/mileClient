@@ -15,6 +15,7 @@ function ListSection() {
   const dispatch = useDispatch();
   const Post = useSelector((state) => state.post.posts);
   const [LastIndex, setLastIndex] = useState(0);
+  const [ThisPaging, setThisPaging] = useState(1);
 
   const navigate = useNavigate();
   const [Posts, setPosts] = useState([]);
@@ -36,20 +37,19 @@ function ListSection() {
   };
 
   const renderCards = Posts.map((posts, index) => {
-    if (index > 30) {
+    if (ThisPaging * 30 < index + 1 || index < ThisPaging * 30 - 30) {
       return;
     }
-    if (index === 0) {
-      return;
-    }
+
     return (
       <div className="ListContainer_ListSection" key={index}>
         <p> {Post[index].topic}</p>
         <p> {Post[index].title}</p>
+        {/* <p> {index}</p> */}
         <p> 글쓴이</p>
         <p>{moment(Post[index].createdAt).format("YY[/]M[/]D")}</p>
-        <p>조회수</p>
-        <p>좋아요</p>
+        <p>{index}</p>
+        <p>-</p>
         <div className="partitionList_ListSection" />
       </div>
     );
@@ -60,7 +60,10 @@ function ListSection() {
       <TopLabel />
       <Notice />
       {renderCards}
-      {LastIndex > 1 && <Footer LastIndex={LastIndex} />}
+      {/* {ThisPaging} */}
+      {LastIndex > 1 && (
+        <Footer LastIndex={LastIndex} setThisPaging={setThisPaging} />
+      )}
     </div>
   );
 }

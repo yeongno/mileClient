@@ -1,0 +1,31 @@
+.footerContainer_LeftSection {
+  padding-bottom: 10rem;
+  padding-top: 1rem;
+  display: flex;
+  .paginationSection_LeftSection {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    p {
+      margin: auto;
+      margin-left: 0;
+      margin-right: 0;
+      align-self: center;
+      height: 100%;
+      padding: 1rem;
+      cursor: pointer;
+    }
+    .paginationBar_LeftSection {
+      display: flex;
+      p {
+        margin: auto;
+        align-self: center;
+        height: 100%;
+        padding: 1rem;
+      }
+    }
+  }
+  .searchingBar {
+  }
+}
