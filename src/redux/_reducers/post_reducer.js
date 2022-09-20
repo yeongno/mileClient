@@ -1,4 +1,9 @@
-import { POST_GET, POST_GO, POST_ONEGET } from "../_actions/types";
+import {
+  POSTNOTICE_GET,
+  POST_GET,
+  POST_GO,
+  POST_ONEGET,
+} from "../_actions/types";
 
 export default function (state = {}, action) {
   switch (action.type) {
@@ -6,10 +11,13 @@ export default function (state = {}, action) {
       return { ...state, postSuc: action.payload };
       break;
     case POST_GET:
-      return { ...state, postSuc: action.payload, posts:action.payload.posts  };
+      return { ...state, postSuc: action.payload, posts: action.payload.posts };
+      break;
+    case POSTNOTICE_GET:
+      return { ...state, postsNotice: action.payload.posts };
       break;
     case POST_ONEGET:
-      return { ...state, postSuc: action.payload};
+      return { ...state, postSuc: action.payload };
       break;
     default:
       return state;

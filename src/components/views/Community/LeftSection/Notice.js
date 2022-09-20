@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import "../../../styles/CommunityPage/LeftSection/Notice.scss";
-import { getPost } from "../../../../redux/_actions/post_action";
+import { getNotice, getPost } from "../../../../redux/_actions/post_action";
 
 function Notice() {
-  const Post = useSelector((state) => state.post.posts);
+  // const Post = useSelector((state) => state.post.posts);
+  const Post = useSelector((state) => state.post.postsNotice);
   const [Posts, setPosts] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -13,7 +14,7 @@ function Notice() {
   }, []);
 
   const fetchPostList = () => {
-    dispatch(getPost({ topic: "public" })).then((response) => {
+    dispatch(getNotice({ topic: "notice" })).then((response) => {
       if (response.payload.success) {
         setPosts(response.payload.posts);
       } else {

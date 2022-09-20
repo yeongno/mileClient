@@ -1,5 +1,5 @@
 import axios from "axios";
-import { POST_GET, POST_GO, POST_ONEGET } from "./types";
+import { POSTNOTICE_GET, POST_GET, POST_GO, POST_ONEGET } from "./types";
 
 export function postGo(dataToSubmit1) {
   const request = axios
@@ -14,8 +14,8 @@ export function postGo(dataToSubmit1) {
 
 /**
  * 해당하는 토픽으로 글 목록을 가져온다.
- * @param {topic:"string"}  
- * @returns posts 
+ * @param {topic:"string"}
+ * @returns posts
  */
 export function getPost(dataToSubmit1) {
   const request = axios
@@ -27,10 +27,19 @@ export function getPost(dataToSubmit1) {
     payload: request,
   };
 }
+export function getNotice(dataToSubmit1) {
+  const request = axios
+    .post("/api/posts/getPost", dataToSubmit1)
+    .then((response) => response.data);
 
+  return {
+    type: POSTNOTICE_GET,
+    payload: request,
+  };
+}
 /**
  * postId로 해당 게시물을 가져온다.
- * @param {_id:postFrom} dataToSubmit1 
+ * @param {_id:postFrom} dataToSubmit1
  * @returns posts
  */
 export function getOnePost(dataToSubmit1) {
@@ -43,5 +52,3 @@ export function getOnePost(dataToSubmit1) {
     payload: request,
   };
 }
-
-
