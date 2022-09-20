@@ -39,15 +39,20 @@ function Footer(props) {
   };
   useEffect(() => {
     setPaging(ceil(props.LastIndex / 30));
+
     for (let i = 0; i < props.LastIndex; i++) {
       PagingArray[i] = i;
       if (i === props.LastIndex - 1) {
         setPagingArray(PagingArray);
       }
     }
-  }, []);
+    console.log(Paging);
+  }, [props.ThisTopic]);
 
   const renderCards = PagingArray.map((paging, index) => {
+    if (index >= Paging - nowPaging * 10) {
+      return;
+    }
     if (nowPaging === 0) {
       for (index; index < 10; index++) {
         return (

@@ -16,17 +16,16 @@ function ListSection() {
   const Post = useSelector((state) => state.post.posts);
   const [LastIndex, setLastIndex] = useState(0);
   const [ThisPaging, setThisPaging] = useState(1);
+  const [ThisTopic, setThisTopic] = useState("public");
 
   const navigate = useNavigate();
   const [Posts, setPosts] = useState([]);
   useEffect(() => {
     fetchPostList();
-
-    console.log("post", Post);
-  }, []);
+  }, [ThisTopic]);
 
   const fetchPostList = () => {
-    dispatch(getPost({ topic: "public" })).then((response) => {
+    dispatch(getPost({ topic: ThisTopic })).then((response) => {
       if (response.payload.success) {
         setPosts(response.payload.posts);
         setLastIndex(response.payload.posts.length);
@@ -56,13 +55,17 @@ function ListSection() {
   });
   return (
     <div>
-      <Header />
+      <Header setThisTopic={setThisTopic} />
       <TopLabel />
       <Notice />
       {renderCards}
       {/* {ThisPaging} */}
       {LastIndex > 1 && (
-        <Footer LastIndex={LastIndex} setThisPaging={setThisPaging} />
+        <Footer
+          LastIndex={LastIndex}
+          setThisPaging={setThisPaging}
+          ThisTopic={ThisTopic}
+        />
       )}
     </div>
   );

@@ -10,6 +10,7 @@ function WritePost() {
   const [Title, setTitle] = useState("");
   const [Content, setContent] = useState("");
   const [FilePath, setFilePath] = useState("");
+  const [Topic, setTopic] = useState("public");
   const userFrom = localStorage.getItem("userId");
 
   const onTitleHandler = (event) => {
@@ -19,6 +20,10 @@ function WritePost() {
   const onContentHandler = (event) => {
     setContent(event.currentTarget.value);
   };
+  const onTopic = (topic) => {
+    setTopic(topic);
+    console.log("topic", topic);
+  };
 
   const onPost = () => {
     let body = {
@@ -26,6 +31,7 @@ function WritePost() {
       content: Content,
       userFrom: userFrom,
       imagePath: FilePath,
+      topic: Topic,
     };
     dispatch(postGo(body)).then((response) => {
       if (response.payload.success) {
@@ -127,6 +133,55 @@ function WritePost() {
               >
                 Submit
               </button>
+              <p
+                onClick={() => {
+                  onTopic("whole");
+                }}
+              >
+                전체
+              </p>
+              <p
+                onClick={() => {
+                  onTopic("notice");
+                }}
+              >
+                공지
+              </p>
+              <p
+                onClick={() => {
+                  onTopic("favorite");
+                }}
+              >
+                인기
+              </p>
+              <p
+                onClick={() => {
+                  onTopic("free");
+                }}
+              >
+                자유
+              </p>
+              <p
+                onClick={() => {
+                  onTopic("question");
+                }}
+              >
+                질문
+              </p>
+              <p
+                onClick={() => {
+                  onTopic("boast");
+                }}
+              >
+                자랑
+              </p>
+              <p
+                onClick={() => {
+                  onTopic("review");
+                }}
+              >
+                후기
+              </p>
             </div>
           </div>
         </Form>
