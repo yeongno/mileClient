@@ -46,6 +46,7 @@ function Footer(props) {
   };
 
   useEffect(() => {
+    setNowIndex(0);
     setNowPaging(0);
     setPaging(ceil(props.LastIndex / 30));
     for (let i = 0; i < props.LastIndex; i++) {

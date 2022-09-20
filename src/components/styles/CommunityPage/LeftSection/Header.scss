@@ -3,14 +3,19 @@
   display: flex;
   margin-top: 1rem;
   margin-bottom: 0.4rem;
+  .activeHeader_LeftSection {
+    color: black;
+  }
   p {
     align-self: center;
     margin: 0;
     font-size: 1em;
     font-weight: bold;
+    color: gray;
 
     &:first-child {
       font-size: 1.3em;
+      color: black;
     }
     &:last-child {
       margin-left: 42%;
