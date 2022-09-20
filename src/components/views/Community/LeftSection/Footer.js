@@ -9,11 +9,13 @@ function Footer(props) {
   const [nowPaging, setNowPaging] = useState(0);
   const [PagingArray, setPagingArray] = useState([]);
   const [Result, setResult] = useState();
+  const [NowIndex, setNowIndex] = useState(0);
 
   const onThisPaging = (index, nowPaging) => {
     if (index >= 10) {
       const result = (1 + nowPaging) * 10;
       props.setThisPaging(result);
+      setNowIndex(index);
       setResult(result);
     } else {
       const ten = nowPaging * 10;
@@ -21,8 +23,10 @@ function Footer(props) {
       const result = ten + one;
       setResult(result);
       props.setThisPaging(result);
+      setNowIndex(index);
     }
   };
+  console.log("nowIndex", NowIndex);
   const onNextPage = () => {
     if (floor(Paging / 10) <= nowPaging) {
       console.log("enough");
@@ -30,6 +34,7 @@ function Footer(props) {
       setNowPaging(nowPaging + 1);
       props.setThisPaging((nowPaging + 1) * 10 + 1);
     }
+    setNowIndex(0);
   };
   const onPrePage = () => {
     if (floor(Paging / 10) < nowPaging || nowPaging === 0) {
@@ -37,10 +42,12 @@ function Footer(props) {
       setNowPaging(nowPaging - 1);
       props.setThisPaging((nowPaging - 1) * 10 + 1);
     }
+    setNowIndex(0);
   };
+  console.log(nowPaging);
+
   useEffect(() => {
     setPaging(ceil(props.LastIndex / 30));
-
     for (let i = 0; i < props.LastIndex; i++) {
       PagingArray[i] = i;
       if (i === props.LastIndex - 1) {
@@ -56,6 +63,10 @@ function Footer(props) {
     }
     if (nowPaging === 0) {
       for (index; index < 10; index++) {
+        //해당 pagination 누르면 스타일 변경
+        if (NowIndex === index) {
+          return <p style={{ background: "black" }}>did</p>;
+        }
         return (
           <p
             onClick={() => {
@@ -69,6 +80,10 @@ function Footer(props) {
     }
     if (nowPaging) {
       for (index; index < 10; index++) {
+        //해당 pagination 누르면 스타일 변경
+        if (NowIndex === index) {
+          return <p style={{ background: "black" }}>did</p>;
+        }
         if (index === 9 && nowPaging !== floor(Paging / 10)) {
           return (
             <p
