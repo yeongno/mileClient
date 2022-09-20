@@ -5,28 +5,36 @@ function Header(props) {
   const navigate = useNavigate();
   const goWrite = () => {
     navigate("/writePost");
+    props.setThisPaging(1);
   };
   const goWhole = (topic) => {
     props.setThisTopic(topic);
     navigate("/community");
+    props.setThisPaging(1);
   };
   const goNotice = (topic) => {
     props.setThisTopic(topic);
+    props.setThisPaging(1);
   };
   const goFavorite = (topic) => {
     props.setThisTopic(topic);
+    props.setThisPaging(1);
   };
   const goFree = (topic) => {
     props.setThisTopic(topic);
+    props.setThisPaging(1);
   };
   const goBoast = (topic) => {
     props.setThisTopic(topic);
+    props.setThisPaging(1);
   };
   const goQuestion = (topic) => {
     props.setThisTopic(topic);
+    props.setThisPaging(1);
   };
   const goReview = (topic) => {
     props.setThisTopic(topic);
+    props.setThisPaging(1);
   };
 
   return (

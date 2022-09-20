@@ -22,7 +22,7 @@ function ListSection() {
   const [Posts, setPosts] = useState([]);
   useEffect(() => {
     fetchPostList();
-  }, [ThisTopic]);
+  }, [ThisTopic, ThisPaging]);
 
   const fetchPostList = () => {
     dispatch(getPost({ topic: ThisTopic })).then((response) => {
@@ -55,7 +55,7 @@ function ListSection() {
   });
   return (
     <div>
-      <Header setThisTopic={setThisTopic} />
+      <Header setThisTopic={setThisTopic} setThisPaging={setThisPaging} />
       <TopLabel />
       <Notice />
       {renderCards}

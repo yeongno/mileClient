@@ -9,6 +9,7 @@ function Footer(props) {
   const [nowPaging, setNowPaging] = useState(0);
   const [PagingArray, setPagingArray] = useState([]);
   const [Result, setResult] = useState();
+
   const onThisPaging = (index, nowPaging) => {
     if (index >= 10) {
       const result = (1 + nowPaging) * 10;
@@ -47,7 +48,7 @@ function Footer(props) {
       }
     }
     console.log(Paging);
-  }, [props.ThisTopic]);
+  }, [props.ThisTopic, props.LastIndex]);
 
   const renderCards = PagingArray.map((paging, index) => {
     if (index >= Paging - nowPaging * 10) {
