@@ -44,9 +44,9 @@ function Footer(props) {
     }
     setNowIndex(0);
   };
-  console.log(nowPaging);
 
   useEffect(() => {
+    setNowPaging(0);
     setPaging(ceil(props.LastIndex / 30));
     for (let i = 0; i < props.LastIndex; i++) {
       PagingArray[i] = i;
@@ -63,9 +63,9 @@ function Footer(props) {
     }
     if (nowPaging === 0) {
       for (index; index < 10; index++) {
-        //해당 pagination 누르면 스타일 변경
+        // 해당 pagination 누르면 스타일 변경
         if (NowIndex === index) {
-          return <p style={{ background: "black" }}>did</p>;
+          return <p style={{ color: "yellow" }}>did</p>;
         }
         return (
           <p
@@ -82,7 +82,7 @@ function Footer(props) {
       for (index; index < 10; index++) {
         //해당 pagination 누르면 스타일 변경
         if (NowIndex === index) {
-          return <p style={{ background: "black" }}>did</p>;
+          return <p style={{ color: "yellowZ" }}>did</p>;
         }
         if (index === 9 && nowPaging !== floor(Paging / 10)) {
           return (
