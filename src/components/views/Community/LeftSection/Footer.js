@@ -33,8 +33,8 @@ function Footer(props) {
     } else {
       setNowPaging(nowPaging + 1);
       props.setThisPaging((nowPaging + 1) * 10 + 1);
+      setNowIndex(0);
     }
-    setNowIndex(0);
   };
   const onPrePage = () => {
     if (floor(Paging / 10) < nowPaging || nowPaging === 0) {
