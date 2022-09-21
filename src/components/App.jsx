@@ -49,7 +49,7 @@ function App() {
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/writePost" element={<WritePost />} />
           <Route path="/onTest" element={<OnTest />} />
-          <Route path="/postPage:postId" element={<DetailPost />} />
+          <Route path="/:postId" element={<DetailPost />} />
         </Route>
       </Routes>
       {/* <Footer /> */}

@@ -43,8 +43,17 @@ function ListSection() {
     return (
       <div className="ListContainer_ListSection" key={index}>
         <p> {Post[index].topic}</p>
-        <p> {Post[index].title}</p>
-        {/* <p> {index}</p> */}
+        <p>
+          {" "}
+          <Link
+            style={{
+              color: "gray",
+            }}
+            to={`/${Post[index]._id}`}
+          >
+            {Post[index].title}
+          </Link>
+        </p>{" "}
         <p> 글쓴이</p>
         <p>{moment(Post[index].createdAt).format("YY[/]M[/]D")}</p>
         <p>{index}</p>
