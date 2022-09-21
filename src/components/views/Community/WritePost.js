@@ -22,7 +22,6 @@ function WritePost() {
   };
   const onTopic = (topic) => {
     setTopic(topic);
-    console.log("topic", topic);
   };
 
   const onPost = () => {

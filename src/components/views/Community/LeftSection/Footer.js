@@ -2,9 +2,9 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { ceil, floor, result } from "lodash";
 import React, { useEffect, useState } from "react";
 import "../../../styles/CommunityPage/LeftSection/Footer.scss";
+import SearchBar from "./SearchBar";
 
 function Footer(props) {
-  console.log("last", props.LastIndex);
   const [Paging, setPaging] = useState(0);
   const [nowPaging, setNowPaging] = useState(0);
   const [PagingArray, setPagingArray] = useState([]);
@@ -26,10 +26,8 @@ function Footer(props) {
       setNowIndex(index);
     }
   };
-  console.log("nowIndex", NowIndex);
   const onNextPage = () => {
     if (floor(Paging / 10) <= nowPaging) {
-      console.log("enough");
     } else {
       setNowPaging(nowPaging + 1);
       props.setThisPaging((nowPaging + 1) * 10 + 1);
@@ -55,7 +53,6 @@ function Footer(props) {
         setPagingArray(PagingArray);
       }
     }
-    console.log(Paging);
   }, [props.ThisTopic, props.LastIndex]);
 
   const renderCards = PagingArray.map((paging, index) => {
@@ -83,7 +80,7 @@ function Footer(props) {
       for (index; index < 10; index++) {
         //해당 pagination 누르면 스타일 변경
         if (NowIndex === index) {
-          return <p style={{ color: "yellowZ" }}>did</p>;
+          return <p style={{ color: "yellow" }}>did</p>;
         }
         if (index === 9 && nowPaging !== floor(Paging / 10)) {
           return (
@@ -122,7 +119,7 @@ function Footer(props) {
         <p onClick={onNextPage}>다음</p>
         <RightOutlined onClick={onNextPage} />
       </div>
-      <div className="searchingBar"></div>
+      <SearchBar />
     </div>
   );
 }

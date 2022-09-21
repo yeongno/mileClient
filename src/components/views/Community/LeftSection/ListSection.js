@@ -22,7 +22,7 @@ function ListSection() {
   const [Posts, setPosts] = useState([]);
   useEffect(() => {
     fetchPostList();
-  }, [ThisTopic, ThisPaging]);
+  }, [ThisTopic, LastIndex]);
 
   const fetchPostList = () => {
     dispatch(getPost({ topic: ThisTopic })).then((response) => {

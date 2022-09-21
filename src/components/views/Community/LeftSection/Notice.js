@@ -33,7 +33,7 @@ function Notice() {
       <div className="noticeContainer_ListSection" key={index}>
         <p> 공지사항</p>
         <p> {Post[index].title}</p>
-        <p> 글쓴이</p>
+        <p> 관리자</p>
         <p>{moment(Post[index].createdAt).format("YY[/]M[/]D")}</p>
         <p>조회수</p>
         <p>좋아요</p>

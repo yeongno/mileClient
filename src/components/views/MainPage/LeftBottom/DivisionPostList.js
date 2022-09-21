@@ -18,7 +18,6 @@ function DivisionPostList() {
     dispatch(getPost({ topic: "public" })).then((response) => {
       if (response.payload.success) {
         setPosts(response.payload.posts);
-        console.log(response.payload.posts);
       } else {
         alert("게시글 정보를 가져오는데 실패하였습니다.");
       }

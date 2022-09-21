@@ -13,7 +13,6 @@ function Header() {
     navigate("/adminPage");
   };
   const auth = useSelector((state) => state.user);
-  console.log("Admin", auth.userData);
   return (
     <div className="container">
       <div className="container_user">
