@@ -2,6 +2,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import MenuBarCom from "../MenuBarCom";
+import "../../../styles/CommunityPage/DetailPost/DetailPost.scss";
+import CommunityPage from "../CommunityPage";
+import ListSection from "../LeftSection/ListSection";
 
 function DetailPost() {
   const postId = useParams().postId;
@@ -50,8 +54,8 @@ function DetailPost() {
   };
 
   return (
-    <div>
-      <hr />
+    <div className="detailPost_Container">
+      <MenuBarCom />
       <table>
         <thead>
           <tr>

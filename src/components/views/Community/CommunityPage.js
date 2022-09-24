@@ -11,6 +11,7 @@ import NavBarCom from "./MenuBarCom";
 import PostList from "./PostList";
 import RightSection from "./RightSection";
 import "../../styles/CommunityPage/CommunityPage.scss";
+import MenuBarCom from "./MenuBarCom";
 
 function CommunityPage() {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ function CommunityPage() {
     <div className="main_container">
       <div className="inner_container_pc">
         <div className="navBarCom_container">
-          <NavBarCom />
+          <MenuBarCom />
         </div>
         <div className="bodyCom_container">
           <div className="leftCom_container">
@@ -41,15 +42,6 @@ function CommunityPage() {
           </div>
         </div>
       </div>
-      {/* <nav className="community_menu"> */}
-      {/* <Button className="write_post" onClick={onWrite}>
-          글쓰기
-        </Button>
-        <Button className="mylist_post" onClick={onTest}>
-          나의 글 목록
-        </Button>
-      </nav>
-      <PostList /> */}
     </div>
   );
 }

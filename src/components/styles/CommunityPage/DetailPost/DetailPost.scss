@@ -1,0 +1,4 @@
+@import "../../mixins.scss";
+.detailPost_Container {
+  @include inner_container_pc();
+}
