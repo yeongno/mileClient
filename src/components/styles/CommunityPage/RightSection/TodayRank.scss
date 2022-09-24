@@ -1,0 +1,55 @@
+@import "../../colors.scss";
+.todayRankContainer_ListSection {
+  p {
+    margin: 0;
+  }
+  background: $lightGray-color;
+  margin-top: 1rem;
+  padding: 1rem;
+  padding-bottom: 0.4rem;
+  padding-top: 0.4rem;
+  border: solid 1px rgb(156, 155, 155);
+  .headerTodayRank_ListSection {
+    p {
+      font-size: 1.5em;
+    }
+  }
+  .partitionTodayRank_ListSection {
+    height: 1px;
+    background: rgb(156, 155, 155);
+  }
+  .topRankTodayRank_ListSection {
+    padding-top: 1rem;
+    display: flex;
+    img {
+      width: 50%;
+    }
+    .firstCardTodayRank_ListSection {
+      text-align: center;
+    }
+    .secondCardTodayRank_ListSection {
+      text-align: center;
+    }
+  }
+  .restCardTodayRank_ListSection {
+    padding-top: 1rem;
+    p {
+      margin-bottom: 0.3rem;
+      &:nth-child(1) {
+      }
+      &:nth-child(2) {
+      }
+      &:nth-child(3) {
+      }
+      &:nth-child(4) {
+      }
+      &:nth-child(5) {
+      }
+      &:nth-child(6) {
+      }
+      &:nth-child(7) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import "../../colors.scss";
+.petWindowContainer_ListSection {
+  background: $lightGray-color;
+  border: solid 1px rgb(153, 153, 153);
+  .headerPetWindow_ListSection {
+    display: flex;
+    padding: 0.4rem;
+
+    p {
+      margin: 0;
+      align-self: center;
+      text-align: center;
+      &:nth-child(1) {
+        width: 30%;
+      }
+      &:nth-child(2) {
+        width: 30%;
+      }
+      &:nth-child(3) {
+        text-align: right;
+
+        width: 60%;
+      }
+    }
+  }
+  .centerPetWindow_Listsection {
+    display: flex;
+    padding: 1rem;
+    padding-top: 0rem;
+    .leftPetWindow_ListSection {
+      width: 30%;
+
+      img {
+        width: 100%;
+
+        border-radius: 10rem;
+      }
+    }
+    .statPetWindow_ListSection {
+      padding-left: 1rem;
+      align-self: center;
+      width: 20%;
+      p {
+        color: gray;
+        margin: 0;
+      }
+    }
+    .rightPetWindow_ListSection {
+      align-self: center;
+      text-align: left;
+      width: 50%;
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .partitionPetWindow_ListSection {
+    height: 1px;
+    background: rgb(156, 155, 155);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .footerPetWindow_Listsection {
+    padding: 0.6rem;
+    p {
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
