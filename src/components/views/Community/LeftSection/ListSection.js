@@ -65,6 +65,7 @@ function ListSection() {
   return (
     <div>
       <Header setThisTopic={setThisTopic} setThisPaging={setThisPaging} />
+      <div className="partitionListSection_LeftSection" />
       <TopLabel />
       <Notice />
       {renderCards}

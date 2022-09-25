@@ -8,3 +8,9 @@
   // width: 56.5rem;
   width: 70.5rem;
 }
+@mixin basicPartition {
+  width: 100%;
+  height: 0.3rem;
+  background: $basic-color;
+  border-bottom: solid 0.05rem white;
+}
