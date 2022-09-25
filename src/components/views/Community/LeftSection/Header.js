@@ -59,7 +59,7 @@ function Header(props) {
       {Title !== "공지" && (
         <p
           onClick={() => {
-            goWhole("notice");
+            goNotice("notice");
             setTitle("공지");
           }}
         >

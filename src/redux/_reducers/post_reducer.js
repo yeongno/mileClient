@@ -17,7 +17,11 @@ export default function (state = {}, action) {
       return { ...state, postsNotice: action.payload.posts };
       break;
     case POST_ONEGET:
-      return { ...state, postSuc: action.payload };
+      return {
+        ...state,
+        postSuc: action.payload,
+        postOne: action.payload.posts,
+      };
       break;
     default:
       return state;
