@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "./LeftSection/Banner";
 import ListSection from "./LeftSection/ListSection";
 
-function LeftSection() {
+function LeftSection(props) {
+  const [OnDetailPost, setOnDetailPost] = useState("");
+  useEffect(() => {
+    setOnDetailPost(props.OnDetailPost);
+  }, [props.OnDetailPost]);
+  console.log(OnDetailPost);
   return (
     <div>
-      <Banner />
+      {OnDetailPost === false && <Banner />}
       <ListSection />
     </div>
   );

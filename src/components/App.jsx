@@ -46,10 +46,11 @@ function App() {
           <Route path="/mainPage" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/community" element={<CommunityPage />} />
+          <Route path="/community" element={<CommunityPage />}>
+            <Route path="/community/:postId" element={<DetailPost />} />
+          </Route>
           <Route path="/writePost" element={<WritePost />} />
           <Route path="/onTest" element={<OnTest />} />
-          <Route path="/:postId" element={<DetailPost />} />
         </Route>
       </Routes>
       {/* <Footer /> */}

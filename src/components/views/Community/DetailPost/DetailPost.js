@@ -1,21 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useOutlet, useOutletContext, useParams } from "react-router-dom";
 import MenuBarCom from "../MenuBarCom";
 import "../../../styles/CommunityPage/DetailPost/DetailPost.scss";
 import CommunityPage from "../CommunityPage";
 import ListSection from "../LeftSection/ListSection";
 
-function DetailPost() {
+function DetailPost(props) {
   const postId = useParams().postId;
   console.log(postId);
   const dispatch = useDispatch();
   const [Posts, setPosts] = useState([]);
-  const [Title, setTitle] = useState();
+  const [Title, setTitle] = useState("");
   const [Content, setContent] = useState();
   const [UserFrom, setuserFrom] = useState();
   const [Favorited, setFavorited] = useState(true);
+  const { setOnDetailPost } = useOutletContext();
 
   const variable = {
     userFrom: UserFrom,
@@ -25,7 +26,8 @@ function DetailPost() {
   };
   useEffect(() => {
     fetchPostList();
-  }, []);
+    setOnDetailPost(Title);
+  }, [postId]);
 
   const fetchPostList = () => {
     axios.post("/api/posts/getOnePost", { _id: postId }).then((response) => {
@@ -55,7 +57,6 @@ function DetailPost() {
 
   return (
     <div className="detailPost_Container">
-      <MenuBarCom />
       <table>
         <thead>
           <tr>

@@ -49,7 +49,7 @@ function ListSection() {
             style={{
               color: "gray",
             }}
-            to={`/${Post[index]._id}`}
+            to={`/community/${Post[index]._id}`}
           >
             {Post[index].title}
           </Link>
