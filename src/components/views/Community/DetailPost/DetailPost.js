@@ -11,10 +11,7 @@ function DetailPost(props) {
   const postId = useParams().postId;
   console.log(postId);
   const dispatch = useDispatch();
-  const [Posts, setPosts] = useState([]);
   const [Title, setTitle] = useState("");
-  const [Content, setContent] = useState();
-  const [UserFrom, setuserFrom] = useState();
   const { setOnDetailPost } = useOutletContext();
 
   useEffect(() => {
@@ -31,7 +28,7 @@ function DetailPost(props) {
   };
 
   return (
-    <div className="detailPost_Container">
+    <div className="detailPost_Container" style={{ width: "100%" }}>
       <PostSection />
       <ReplySection />
     </div>

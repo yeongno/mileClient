@@ -11,7 +11,6 @@ function Header(props) {
   };
   const goWhole = (topic) => {
     props.setThisTopic(topic);
-    navigate("/community");
     props.setThisPaging(1);
   };
   const goNotice = (topic) => {

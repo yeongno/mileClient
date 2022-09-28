@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import BottomSection from "./BottomSection";
+import TopLabel from "./TopLabel";
 
 function PostSection() {
-  const Post = useSelector((state) => state.post.postOne);
-  const [Title, setTitle] = useState("");
-  // console.log(Post[0]);
-  useEffect(() => {
-    fetchPostList();
-  }, [Post]);
-  const fetchPostList = () => {
-    if (Post) {
-      setTitle(Post[0].title);
-    }
-  };
-  return <div>{Title}</div>;
+  return (
+    <div>
+      <TopLabel />
+      <BottomSection />
+    </div>
+  );
 }
 
 export default PostSection;
