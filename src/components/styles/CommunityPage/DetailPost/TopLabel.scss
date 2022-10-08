@@ -1,3 +1,4 @@
+@import "../../colors.scss";
 .TopLabelContainer_DetailPost {
   // display: flex;
   .topTopLabel_DetailPost {
@@ -7,6 +8,12 @@
       width: 50%;
       display: flex;
       p {
+        &:first-child {
+          color: gray;
+        }
+        &:nth-child(2) {
+          padding-left: 1rem;
+        }
         margin: 0;
       }
     }
@@ -17,31 +24,55 @@
 
       p {
         margin: 0;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      a {
+        color: gray;
       }
     }
   }
   .partitionTopLabel_DetailPost {
     width: 100%;
     height: 1px;
-    background: gray;
+    background: $lightGray-color;
   }
-  .bottomeTopLabel_DetailPost {
+  .bottomTopLabel_DetailPost {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.9em;
     width: 100%;
     display: flex;
 
-    .bottomeLeftTopLabel_DetailPost {
+    .bottomLeftTopLabel_DetailPost {
       width: 50%;
       display: flex;
       p {
+        color: gray;
+        padding-right: 0.5rem;
+        &:first-child {
+        }
+        &:nth-child(2) {
+          color: $basic-color;
+        }
+        &:nth-child(3) {
+        }
         margin: 0;
       }
     }
-    .bottomeRightTopLabel_DetailPost {
+    .bottomRightTopLabel_DetailPost {
       width: 50%;
       display: flex;
       justify-content: right;
 
       p {
+        color: gray;
+        &:first-child {
+        }
+        &:nth-child(2) {
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
         margin: 0;
       }
     }
