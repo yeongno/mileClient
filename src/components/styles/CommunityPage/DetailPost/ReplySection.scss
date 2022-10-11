@@ -1,0 +1,71 @@
+@import "../../mixins.scss";
+@import "../../colors.scss";
+.ReplySectionContainer_DetailPost {
+  .topLabelReplySection_DetailPost {
+    padding-bottom: 0.4rem;
+    font-weight: bold;
+    a {
+      color: black;
+      font-size: 1.1em;
+      &:nth-child(1) {
+      }
+
+      &:nth-child(2) {
+        padding-left: 0.3rem;
+        padding-right: 0.7rem;
+      }
+      &:nth-child(3) {
+      }
+      &:nth-child(4) {
+        padding-left: 0.3rem;
+      }
+    }
+  }
+  .partitionReplySection_DetailPost {
+    @include basicPartition();
+  }
+  .replyListReplySection_DetailPost {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .topReplySection_DetailPost {
+      width: 100%;
+      display: flex;
+      .profileReplySection_DetailPost {
+        width: 4rem;
+        text-align: center;
+        img {
+          height: 4rem;
+          border-radius: 100%;
+          border: solid gray 3px;
+        }
+        a {
+          color: gray;
+        }
+      }
+      .detailReplySection_DetailPost {
+        padding-left: 1rem;
+        width: 70%;
+        a {
+          &:nth-child(1) {
+            color: gray;
+          }
+          &:nth-child(2) {
+            padding-left: 0.7rem;
+            color: $basic-color;
+          }
+          &:nth-child(4) {
+            color: black;
+          }
+          &:nth-child(6) {
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+  .subPartitionReplySection_DetailPost {
+    @include basicPartition();
+    background: $lightGray-color;
+    height: 3px;
+  }
+}
