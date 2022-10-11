@@ -1,3 +1,4 @@
+import { BorderOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "../../../styles/CommunityPage/DetailPost/BottomSection.scss";
@@ -23,8 +24,19 @@ function BottomSection() {
           />
         </div>
         <div className="contentContainer_DetailPost">{Content}</div>
+        <div className="likeContainer_DetailPost">
+          <a>
+          좋아요 
+            </a>
+            <a>
+            <BorderOutlined/> 
+            </a>
+            <a>
+              43
+            </a>
+        </div>
       </div>
-
+      
       <div className="banner_DetailPost"></div>
     </div>
   );
