@@ -18,17 +18,17 @@ function ReplySection() {
         <div className="topReplySection_DetailPost">
           <div className="profileReplySection_DetailPost">
             <img src={"/assets/profile.png"} />
-            <a>답글쓰기</a>
           </div>
           <div className="detailReplySection_DetailPost">
             <a>난 자갈치</a>
             <a>복무중</a>
             <br />
             <a>댓글이다.</a>
-            <br />
-
-            <a>2015.12:23</a>
           </div>
+        </div>
+        <div className="bottomeReplySection_DetailPost">
+          <a>답글쓰기</a>
+          <a>2015.12:23</a>
         </div>
       </div>
       <div className="subPartitionReplySection_DetailPost" />
