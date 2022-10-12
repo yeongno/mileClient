@@ -1,41 +1,44 @@
-import { BorderOutlined } from "@ant-design/icons";
+import { Input } from "antd";
 import React from "react";
+import moment from "moment";
+import "moment/locale/ko";
 import "../../../styles/CommunityPage/DetailPost/ReplySection.scss";
-import OnReply from "./OnReply";
+import { BorderOutlined } from "@ant-design/icons";
+function ReplyOnRendering(props) {
+  const userFrom = props.UserFrom;
+  const UserImg = props.UserImg;
+  const createdAt = props.CreatedAt;
+  const content = props.Content;
+  const userName = props.UserName;
+  const createdDate = moment(createdAt);
 
-function ReplySection() {
   return (
-    <div className="ReplySectionContainer_DetailPost">
-      <div className="topLabelReplySection_DetailPost">
-        <a>댓글</a>
-        <a>3</a>
-        <a>최신순</a>
-        <a>
-          <BorderOutlined />
-        </a>
-      </div>
-      <div className="partitionReplySection_DetailPost" />
+    <div>
+     
+      <div className="ReplySectionContainer_DetailPost">
+
       <div className="replyListReplySection_DetailPost">
         <div className="topReplySection_DetailPost">
           <div className="profileReplySection_DetailPost">
             <img src={"/assets/profile.png"} />
           </div>
           <div className="detailReplySection_DetailPost">
-            <a>난 자갈치</a>
+            <a>              {userName}
+</a>
             <a>복무중</a>
             <br />
-            <a>댓글이다.</a>
+            <a>{content}</a>
           </div>
         </div>
         <div className="bottomeReplySection_DetailPost">
           <a>답글쓰기</a>
-          <a>2015.12:23</a>
+          <a>{moment(createdDate).fromNow()}</a>
         </div>
       </div>
       <div className="subPartitionReplySection_DetailPost" />
-      <OnReply />
+    </div>
     </div>
   );
 }
 
-export default ReplySection;
+export default ReplyOnRendering;
