@@ -94,7 +94,6 @@ function OnReply(props) {
       style={{
         width: "100%",
         position: "relative",
-        // height: "500px",
         msOverflowStyle: "none",
         scrollbarWidth: "none",
       }}
@@ -106,10 +105,8 @@ function OnReply(props) {
       <div
         style={{
           width: "70%",
-          background: "#b2bec2",
           paddingTop: "1%",
           paddingBottom: "0.5%",
-          borderRadius: " 10px",
         }}
       >
         <div
@@ -121,25 +118,13 @@ function OnReply(props) {
             marginRight: "2%",
           }}
         >
-          <img
-            style={{
-              width: "50px",
-              height: "50px",
-              border: "1px solid lightgray",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: "75px",
-              boxShadow: "1px 1px 1px 1px inset",
-            }}
-            src={`http://localhost:5000/${FilePath}`}
-            alt="프로필"
-          />
+         
           <Input
             style={{
-              width: "90%",
+          background: "#fbfbfb",
+          width: "90%",
               marginRight: "5%",
               marginLeft: "2%",
-              borderRadius: "10px",
               wordBreak: "break-all",
             }}
             placeholder="댓글을 입력하세요"
