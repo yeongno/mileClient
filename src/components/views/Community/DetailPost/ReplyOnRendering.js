@@ -1,5 +1,5 @@
 import { Input } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import "moment/locale/ko";
 import "../../../styles/CommunityPage/DetailPost/ReplySection.scss";

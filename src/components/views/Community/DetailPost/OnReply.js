@@ -8,9 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 import ReplyRendering from "./ReplyRendering";
 import "../../../styles/CommunityPage/DetailPost/OnReply.scss"
 import { getReply } from "../../../../redux/_actions/reply_action";
+import { useParams } from "react-router-dom";
 
 function OnReply(props) {
-    const Post = useSelector((state) => state.post.postOne);
+  const postId1 = useParams().postId;
+  const Post = useSelector((state) => state.post.postOne);
     const [PostId, setPostId] = useState("");
     const user = useSelector((state) => state.user);
   // const [FilePath, setFilePath] = useState("");
@@ -48,7 +50,7 @@ function OnReply(props) {
   useEffect(() => {
     fetchUserList();
 
-  }, [Post]);
+  }, [postId1]);
   const fetchUserList = () => {
     if (Post) {
         setPostId(Post[0]._id);
@@ -65,10 +67,9 @@ function OnReply(props) {
     //     }
     //   });
 
-    dispatch(getReply({postFrom:PostId}))
+    dispatch(getReply({postFrom:postId1}))
     .then((response) => {
         if (response.payload.req[0]) {
-  console.log(Reply1)
           // setUserImg(response.payload.req[0].proFileImg);
           setReply(response.payload.req);
           setOnReply(true);
@@ -82,6 +83,7 @@ function OnReply(props) {
       <Col key={index}>
         <div>
           <ReplyRendering reply={reply} index={index} />
+          {reply.length}
         </div>
       </Col>
     );

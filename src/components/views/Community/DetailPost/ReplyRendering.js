@@ -1,9 +1,13 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import ReplyOnRendering from "./ReplyOnRendering";
 import { useSelector } from "react-redux";
+import "../../../styles/CommunityPage/DetailPost/ReplySection.scss";
+import moment from "moment";
+import { useParams } from "react-router-dom";
+import "moment/locale/ko";
 
 function ReplyRendering(props) {
+  const postId = useParams().postId;
+
     const Post = useSelector((state) => state.post.postOne);
     const [UserImg, setUserImg] = useState("");
   const [UserName, setUserName] = useState("");
@@ -12,11 +16,12 @@ function ReplyRendering(props) {
   const [CreatedAt, setDate] = useState("");
   const [OnReply, setOnReply] = useState(false);
   const Reply1 = useSelector((state) => state.reply.getReply);
+  const createdDate = moment(CreatedAt);
 
   useEffect(() => {
 
     fetchUserList();
-  }, [Post]);
+  }, [postId]);
   const fetchUserList = () => {
    
           setUserImg(Reply1.req[props.index].proFileImg);
@@ -28,13 +33,35 @@ function ReplyRendering(props) {
   return (
     <div>
      
-        <ReplyOnRendering
+        {/* <ReplyOnRendering
           UserFrom={UserFrom}
           UserImg={UserImg}
           CreatedAt={CreatedAt}
           Content={Content}
           UserName={UserName}
-        />
+        /> */}
+         <div className="ReplySectionContainer_DetailPost">
+
+<div className="replyListReplySection_DetailPost">
+  <div className="topReplySection_DetailPost">
+    <div className="profileReplySection_DetailPost">
+      <img src={"/assets/profile.png"} />
+    </div>
+    <div className="detailReplySection_DetailPost">
+      <a>              {UserName}
+</a>
+      <a>복무중</a>
+      <br />
+      <a>{Content}</a>
+    </div>
+  </div>
+  <div className="bottomeReplySection_DetailPost">
+    <a>답글쓰기</a>
+    <a>{moment(createdDate).fromNow()}</a>
+  </div>
+</div>
+<div className="subPartitionReplySection_DetailPost" />
+</div>
         
         {/* // <img
         //   style={{
