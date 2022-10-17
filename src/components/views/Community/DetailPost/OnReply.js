@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import ReplyRendering from "./ReplyRendering";
+import "../../../styles/CommunityPage/DetailPost/OnReply.scss"
 
 function OnReply(props) {
     const Post = useSelector((state) => state.post.postOne);
@@ -91,51 +92,32 @@ function OnReply(props) {
 
   return (
     <div
-      style={{
-        width: "100%",
-        position: "relative",
-        msOverflowStyle: "none",
-        scrollbarWidth: "none",
-      }}
+    className="OnReplyContainer_DetailPost"
+   
     >
-      <div style={{ height: "86%" }}>
+      <div className="renderingContainer_DetailPost">
         {/* reply rendering zone */}
         <div>{OnReply && <div>{renderCards}</div>}</div>
       </div>
       <div
-        style={{
-          width: "70%",
-          paddingTop: "1%",
-          paddingBottom: "0.5%",
-        }}
+      className="submitOnReply_DetailPost"
       >
         <div
-          // reply submit zone
-          style={{
-            display: "flex",
-            width: "100%",
-            marginLeft: "2%",
-            marginRight: "2%",
-          }}
+          className="submitContainerOnReply_DetailPost"
         >
          
           <Input
-            style={{
-          background: "#fbfbfb",
-          width: "90%",
-              marginRight: "5%",
-              marginLeft: "2%",
-              wordBreak: "break-all",
-            }}
+          className="inputOnReply_DetailPost"
+  
             placeholder="댓글을 입력하세요"
             onChange={onContentHandler}
             onPressEnter={onSubmit}
             value={Contentset}
           />
         </div>
-        <span style={{ marginLeft: "11%", color: "white" }}>
+        <div className="bottomContainerOnReply_DetailPost">
           글을 게시하려면 Enter 키를 누르세요.
-        </span>
+        </div>
       </div>
     </div>
   );

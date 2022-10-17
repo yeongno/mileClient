@@ -1,0 +1,31 @@
+.OnReplyContainer_DetailPost{
+    width: 100%;
+    position: relative;
+    .renderingContainer_DetailPost{
+
+    }
+    .submitOnReply_DetailPost{
+        width: 70%;
+        padding-top: 1%;
+        padding-bottom: 0.5%;
+        .submitContainerOnReply_DetailPost{
+            display: flex;
+            width: 100%;
+            margin-left: 2%;
+            margin-right: 2%;
+            .inputOnReply_DetailPost{
+                background: #fbfbfb;
+          width: 90%;
+              margin-right: 5%;
+              margin-left: 2%;
+              word-break: break-all;
+            }
+
+        }
+        .bottomContainerOnReply_DetailPost{
+            color: yellow;
+        }
+    }
+
+
+}
