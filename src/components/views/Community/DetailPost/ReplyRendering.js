@@ -11,32 +11,23 @@ function ReplyRendering(props) {
   const [Content, setContents] = useState("");
   const [CreatedAt, setDate] = useState("");
   const [OnReply, setOnReply] = useState(false);
+  const Reply1 = useSelector((state) => state.reply.getReply);
 
   useEffect(() => {
 
     fetchUserList();
   }, [Post]);
   const fetchUserList = () => {
-    axios
-      .post("/api/reply/getReply", {
-        postFrom: props.reply.postFrom,
-      })
-      .then((response) => {
-        if (response.data.req[0]) {
-          setUserImg(response.data.req[props.index].proFileImg);
-          setUserName(response.data.req[props.index].userName);
-          setUserFrom(response.data.req[props.index].userFrom);
-          setContents(response.data.req[props.index].content);
-          setDate(response.data.req[props.index].createdAt);
-          setOnReply(true);
-        } else {
-          setOnReply(false);
-        }
-      });
+   
+          setUserImg(Reply1.req[props.index].proFileImg);
+          setUserName(Reply1.req[props.index].userName);
+          setUserFrom(Reply1.req[props.index].userFrom);
+          setContents(Reply1.req[props.index].content);
+          setDate(Reply1.req[props.index].createdAt);
   };
   return (
     <div>
-      {OnReply && (
+     
         <ReplyOnRendering
           UserFrom={UserFrom}
           UserImg={UserImg}
@@ -44,7 +35,8 @@ function ReplyRendering(props) {
           Content={Content}
           UserName={UserName}
         />
-        // <img
+        
+        {/* // <img
         //   style={{
         //     width: "5%",
         //     height: "5%",
@@ -56,8 +48,7 @@ function ReplyRendering(props) {
         //   }}
         //   src={`http://localhost:5000/${UserImg}`}
         //   alt="프로필"
-        // />
-      )}
+        // /> */}
     </div>
   );
 }

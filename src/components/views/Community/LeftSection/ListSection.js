@@ -23,6 +23,12 @@ function ListSection() {
   useEffect(() => {
     fetchPostList();
   }, [ThisTopic, LastIndex]);
+  const onDetail=()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 
   const fetchPostList = () => {
     dispatch(getPost({ topic: ThisTopic })).then((response) => {
@@ -50,6 +56,7 @@ function ListSection() {
               color: "gray",
             }}
             to={`/community/${Post[index]._id}`}
+            onClick={onDetail()}
           >
             {Post[index].title}
           </Link>
