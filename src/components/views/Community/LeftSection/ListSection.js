@@ -56,7 +56,7 @@ function ListSection() {
               color: "gray",
             }}
             to={`/community/${Post[index]._id}`}
-            onClick={onDetail()}
+            onClick={onDetail}
           >
             {Post[index].title}
           </Link>
