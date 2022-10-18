@@ -11,6 +11,7 @@ import { getReply } from "../../../../redux/_actions/reply_action";
 import { useParams } from "react-router-dom";
 
 function OnReply(props) {
+  const [replyName, setReplyName] = useState("")
   const postId1 = useParams().postId;
   const Post = useSelector((state) => state.post.postOne);
     const [PostId, setPostId] = useState("");
@@ -82,7 +83,7 @@ function OnReply(props) {
     return (
       <Col key={index}>
         <div>
-          <ReplyRendering reply={reply} index={index} />
+          <ReplyRendering reply={reply} index={index} setReplyName={setReplyName} />
           {reply.length}
         </div>
       </Col>
@@ -104,10 +105,9 @@ function OnReply(props) {
         <div
           className="submitContainerOnReply_DetailPost"
         >
-         
+         {replyName}
           <Input
           className="inputOnReply_DetailPost"
-  
             placeholder="댓글을 입력하세요"
             onChange={onContentHandler}
             onPressEnter={onSubmit}

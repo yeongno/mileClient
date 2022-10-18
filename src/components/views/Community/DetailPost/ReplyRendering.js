@@ -30,6 +30,9 @@ function ReplyRendering(props) {
           setContents(Reply1.req[props.index].content);
           setDate(Reply1.req[props.index].createdAt);
   };
+  const onReply=()=>{
+    props.setReplyName(Reply1.req[props.index].userName)
+  }
   return (
     <div>
      
@@ -56,7 +59,7 @@ function ReplyRendering(props) {
     </div>
   </div>
   <div className="bottomeReplySection_DetailPost">
-    <a>답글쓰기</a>
+    <a onClick={onReply}>답글쓰기</a>
     <a>{moment(createdDate).fromNow()}</a>
   </div>
 </div>

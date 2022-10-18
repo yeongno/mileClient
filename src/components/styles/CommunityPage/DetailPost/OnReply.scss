@@ -5,20 +5,23 @@
 
     }
     .submitOnReply_DetailPost{
-        width: 70%;
+        // width: 70%;
         padding-top: 1%;
         padding-bottom: 0.5%;
         .submitContainerOnReply_DetailPost{
             display: flex;
-            width: 100%;
+            // width: 100%;
+            // width: 3rem;
             margin-left: 2%;
             margin-right: 2%;
             .inputOnReply_DetailPost{
+
                 background: #fbfbfb;
-          width: 90%;
+          height: 7rem;
               margin-right: 5%;
               margin-left: 2%;
               word-break: break-all;
+              white-space:normal;
             }
 
         }
