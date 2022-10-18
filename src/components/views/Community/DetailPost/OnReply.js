@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 
 function OnReply(props) {
   const [replyName, setReplyName] = useState("")
+  const [replyFrom, setReplyFrom] = useState("")
   const postId1 = useParams().postId;
   const Post = useSelector((state) => state.post.postOne);
     const [PostId, setPostId] = useState("");
@@ -35,6 +36,7 @@ function OnReply(props) {
         .post("/api/reply/setReply", {
           userFrom: userId,
           postFrom: PostId,
+          replyFrom: replyFrom,
           // proFileImg: FilePath,
           content: Contentset,
           userName,
@@ -67,6 +69,8 @@ function OnReply(props) {
     //       alert("유저 정보를 가져오는데 실패하였습니다.");
     //     }
     //   });
+    setReplyName("");
+    setReplyFrom("");
 
     dispatch(getReply({postFrom:postId1}))
     .then((response) => {
@@ -83,7 +87,7 @@ function OnReply(props) {
     return (
       <Col key={index}>
         <div>
-          <ReplyRendering reply={reply} index={index} setReplyName={setReplyName} />
+          <ReplyRendering reply={reply} index={index} setReplyName={setReplyName} setReplyFrom={setReplyFrom} />
           {reply.length}
         </div>
       </Col>

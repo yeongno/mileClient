@@ -29,6 +29,7 @@ function ReplyRendering(props) {
           setUserFrom(Reply1.req[props.index].userFrom);
           setContents(Reply1.req[props.index].content);
           setDate(Reply1.req[props.index].createdAt);
+          props.setReplyFrom(Reply1.req[props.index].userFrom)
   };
   const onReply=()=>{
     props.setReplyName(Reply1.req[props.index].userName)
