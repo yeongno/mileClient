@@ -1,4 +1,4 @@
-import { MessageOutlined } from "@ant-design/icons";
+import { CloseSquareOutlined, MessageOutlined } from "@ant-design/icons";
 import { Button, Col, Form, Input } from "antd";
 import axios from "axios";
 import React from "react";
@@ -94,6 +94,9 @@ function OnReply(props) {
       </Col>
     );
   });
+  const OffReply = ()=>{
+    setReplyName("");
+  }
 
   return (
     <div
@@ -110,7 +113,15 @@ function OnReply(props) {
         <div
           className="submitContainerOnReply_DetailPost"
         >
-         {replyName}
+          {
+            replyName &&(
+              <div>
+              {replyName}<CloseSquareOutlined onClick={OffReply}/>
+                </div>
+
+
+            )
+          }
           <Input
           className="inputOnReply_DetailPost"
             placeholder="댓글을 입력하세요"

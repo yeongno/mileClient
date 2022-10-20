@@ -51,8 +51,13 @@ function ReplyRendering(props) {
          <div className="ReplySectionContainer_DetailPost">
 
 <div className="replyListReplySection_DetailPost">
+
   <div className="topReplySection_DetailPost">
+  {
+    ReplyName && <div className="activReplyReplySection_DetailPost"></div>
+  }
     <div className="profileReplySection_DetailPost">
+
       <img src={"/assets/profile.png"} />
     </div>
     <div className="detailReplySection_DetailPost">
@@ -71,8 +76,11 @@ function ReplyRendering(props) {
         <a>{Content}</a>
     </div>
   </div>
+
   <div className="bottomeReplySection_DetailPost">
-    <a onClick={onReply}>답글쓰기</a>
+  {
+    ReplyName && <div className="activReplyReplySection_DetailPost"></div>
+  }  <a onClick={onReply}>답글쓰기</a>
     <a>{moment(createdDate).fromNow()}</a>
   </div>
 </div>

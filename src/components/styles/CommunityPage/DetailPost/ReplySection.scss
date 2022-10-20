@@ -1,7 +1,12 @@
 @import "../../mixins.scss";
 @import "../../colors.scss";
+.activReplyReplySection_DetailPost{
+  width: 5rem;
+}
 .ReplySectionContainer_DetailPost {
+  
   .topLabelReplySection_DetailPost {
+
     padding-bottom: 0.4rem;
     font-weight: bold;
     a {
@@ -23,7 +28,9 @@
   }
   .partitionReplySection_DetailPost {
     @include basicPartition();
+
   }
+ 
   .replyListReplySection_DetailPost {
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
@@ -34,7 +41,7 @@
         width: 4rem;
         padding-left: 1rem;
         img {
-          height: 3rem;
+    height: 3rem;
           border-radius: 100%;
           border: solid gray 3px;
         }
@@ -65,8 +72,8 @@
       }
     }
     .bottomeReplySection_DetailPost {
+      display: flex;
       width: 100%;
-      padding-left: 0.5rem;
       padding-top: 0.5rem;
       a {
         color: gray;
