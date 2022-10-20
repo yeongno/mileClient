@@ -53,9 +53,14 @@
           &:nth-child(4) {
             color: black;
           }
-          &:nth-child(6) {
-            color: gray;
+          &:nth-child(5) {
+            color: black;
           }
+
+        }
+        span{
+          color: blue;
+          padding-right: 0.4em;
         }
       }
     }

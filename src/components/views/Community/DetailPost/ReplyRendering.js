@@ -14,6 +14,7 @@ function ReplyRendering(props) {
   const [UserFrom, setUserFrom] = useState("");
   const [Content, setContents] = useState("");
   const [CreatedAt, setDate] = useState("");
+  const [ReplyName, setReplyName] = useState("");
   const [OnReply, setOnReply] = useState(false);
   const Reply1 = useSelector((state) => state.reply.getReply);
   const createdDate = moment(CreatedAt);
@@ -28,11 +29,14 @@ function ReplyRendering(props) {
           setUserName(Reply1.req[props.index].userName);
           setUserFrom(Reply1.req[props.index].userFrom);
           setContents(Reply1.req[props.index].content);
+          setReplyName(Reply1.req[props.index].replyName);
           setDate(Reply1.req[props.index].createdAt);
-          props.setReplyFrom(Reply1.req[props.index].userFrom)
+         
   };
   const onReply=()=>{
-    props.setReplyName(Reply1.req[props.index].userName)
+    props.setReplyFrom(UserFrom)
+    props.setReplyName(UserName)
+    console.log(UserFrom);
   }
   return (
     <div>
@@ -56,7 +60,15 @@ function ReplyRendering(props) {
 </a>
       <a>복무중</a>
       <br />
-      <a>{Content}</a>
+        {
+          ReplyName &&(
+      <span>
+
+            @{ReplyName} 
+            </span>    
+            )
+        }
+        <a>{Content}</a>
     </div>
   </div>
   <div className="bottomeReplySection_DetailPost">

@@ -28,27 +28,7 @@ function OnReply(props) {
   const onContentHandler = (event) => {
     setContents(event.currentTarget.value);
   };
-  const onSubmit = () => {
-
-    if (Contentset) {
-      
-      axios
-        .post("/api/reply/setReply", {
-          userFrom: userId,
-          postFrom: PostId,
-          replyFrom: replyFrom,
-          // proFileImg: FilePath,
-          content: Contentset,
-          userName,
-        })
-        .then((response) => {
-          if (response.data.success) {
-          }
-        });
-      setContents("");
-    }
-    fetchUserList();
-  };
+ 
 
   useEffect(() => {
     fetchUserList();
@@ -69,8 +49,6 @@ function OnReply(props) {
     //       alert("유저 정보를 가져오는데 실패하였습니다.");
     //     }
     //   });
-    setReplyName("");
-    setReplyFrom("");
 
     dispatch(getReply({postFrom:postId1}))
     .then((response) => {
@@ -82,6 +60,29 @@ function OnReply(props) {
           setOnReply(false);
         }
       });
+  };
+  const onSubmit = () => {
+
+    if (Contentset) {
+      
+      axios
+        .post("/api/reply/setReply", {
+          userFrom: userId,
+          postFrom: PostId,
+          replyFrom: replyFrom,
+          // proFileImg: FilePath,
+          content: Contentset,
+          userName,
+          replyName,
+        })
+        .then((response) => {
+          if (!response.data.success) {
+            alert( replyFrom)
+          }
+        });
+      setContents("");
+    }
+    fetchUserList();
   };
   const renderCards = Reply.map((reply, index) => {
     return (
