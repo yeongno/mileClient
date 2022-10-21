@@ -13,7 +13,9 @@ import { useParams } from "react-router-dom";
 function OnReply(props) {
   const [replyName, setReplyName] = useState()
   const [replyFrom, setReplyFrom] = useState()
+  //해당 커맨드의 인덱스 넘버이며 커맨드에 넘버와 비교하여 답글이 있음을 체크하기 위한 저장 값
   const [comNum, setComNum] = useState()
+  //해당 커맨드 -> 답글 인덱스 넘버
   const [repNum, setRepNum] = useState()
   const postId = useParams().postId;
   const Post = useSelector((state) => state.post.postOne);
@@ -73,6 +75,7 @@ function OnReply(props) {
           // proFileImg: FilePath,
           content: Contentset,
           userName,
+          comNum,
           replyName,
         })
         .then((response) => {
@@ -90,7 +93,8 @@ function OnReply(props) {
     return (
       <Col key={index}>
         <div>
-          <ReplyRendering reply={reply} index={index} setReplyName={setReplyName} setReplyFrom={setReplyFrom} />
+          <ReplyRendering reply={reply} index={index} setReplyName={setReplyName} setReplyFrom={setReplyFrom}
+           setRepNum={setRepNum} setComNum={setComNum}/>
           {reply.length}
         </div>
       </Col>

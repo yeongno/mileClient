@@ -16,6 +16,8 @@ function ReplyRendering(props) {
   const [CreatedAt, setDate] = useState("");
   const [ReplyName, setReplyName] = useState("");
   const [OnReply, setOnReply] = useState(false);
+  //onReply의 comNum와 비교할 값이며 해당 커멘드 넘버
+  const [comNum, setComNum] = useState(null);
   const Reply1 = useSelector((state) => state.reply.getReply);
   const createdDate = moment(CreatedAt);
 
@@ -30,12 +32,21 @@ function ReplyRendering(props) {
           setUserFrom(Reply1.req[props.index].userFrom);
           setContents(Reply1.req[props.index].content);
           setReplyName(Reply1.req[props.index].replyName);
+          setComNum(Reply1.req[props.index]?.comNum);
           setDate(Reply1.req[props.index].createdAt);
          
   };
   const onReply=()=>{
     props.setReplyFrom(UserFrom)
     props.setReplyName(UserName)
+    //todo
+    if(comNum === [props.index]){
+      alert(comNum)
+    }
+    props.setRepNum(props.index)
+
+    props.setComNum(props.index)
+
     console.log(UserFrom);
   }
   return (
