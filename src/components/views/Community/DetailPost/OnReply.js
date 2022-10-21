@@ -11,16 +11,17 @@ import { getReply } from "../../../../redux/_actions/reply_action";
 import { useParams } from "react-router-dom";
 
 function OnReply(props) {
-  const [replyName, setReplyName] = useState("")
-  const [replyFrom, setReplyFrom] = useState("")
-  const postId1 = useParams().postId;
+  const [replyName, setReplyName] = useState()
+  const [replyFrom, setReplyFrom] = useState()
+  const [comNum, setComNum] = useState()
+  const [repNum, setRepNum] = useState()
+  const postId = useParams().postId;
   const Post = useSelector((state) => state.post.postOne);
-    const [PostId, setPostId] = useState("");
     const user = useSelector((state) => state.user);
   // const [FilePath, setFilePath] = useState("");
   const [Contentset, setContents] = useState("");
   const [Reply, setReply] = useState([]);
-  const [OnReply, setOnReply] = useState(false);
+  const [OnCom, setOnCom] = useState(false);
   const userId = user.userData?._id;
   const userName = user.userData?.name;
   const dispatch = useDispatch();
@@ -33,11 +34,11 @@ function OnReply(props) {
   useEffect(() => {
     fetchUserList();
 
-  }, [postId1]);
+  }, [postId]);
   const fetchUserList = () => {
-    if (Post) {
-        setPostId(Post[0]._id);
-      }
+    // if (Post) {
+    //     setPostId(Post[0]._id);
+    //   }
     // axios
     //   .post("/api/users/getProFile", {
     //     userFrom: userId,
@@ -50,25 +51,24 @@ function OnReply(props) {
     //     }
     //   });
 
-    dispatch(getReply({postFrom:postId1}))
+    dispatch(getReply({postFrom:postId}))
     .then((response) => {
         if (response.payload.req[0]) {
           // setUserImg(response.payload.req[0].proFileImg);
           setReply(response.payload.req);
-          setOnReply(true);
+          setOnCom(true);
         } else {
-          setOnReply(false);
+          setOnCom(false);
         }
       });
   };
   const onSubmit = () => {
 
     if (Contentset) {
-      
       axios
         .post("/api/reply/setReply", {
           userFrom: userId,
-          postFrom: PostId,
+          postFrom: postId,
           replyFrom: replyFrom,
           // proFileImg: FilePath,
           content: Contentset,
@@ -82,7 +82,9 @@ function OnReply(props) {
         });
       setContents("");
     }
+    setTimeout(() => {
     fetchUserList();
+    }, 500);
   };
   const renderCards = Reply.map((reply, index) => {
     return (
@@ -105,7 +107,7 @@ function OnReply(props) {
     >
       <div className="renderingContainer_DetailPost">
         {/* reply rendering zone */}
-        <div>{OnReply && <div>{renderCards}</div>}</div>
+        <div>{OnCom && <div>{renderCards}</div>}</div>
       </div>
       <div
       className="submitOnReply_DetailPost"
