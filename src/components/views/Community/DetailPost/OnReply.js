@@ -114,13 +114,17 @@ function OnReply(props) {
   }
 
   return (
-    <div
+    <div>
+
+  <div
     className="OnReplyContainer_DetailPost"
    
     >
       <div className="renderingContainer_DetailPost">
         {/* reply rendering zone */}
-        <div>{OnCom && <div>{renderCards}</div>}</div>
+        <div>{OnCom&& <div>
+            {renderCards}
+           </div>}</div>
       </div>
       <div
       className="submitOnReply_DetailPost"
@@ -150,6 +154,8 @@ function OnReply(props) {
         </div>
       </div>
     </div>
+    </div>
+  
   );
 }
 export default OnReply;
