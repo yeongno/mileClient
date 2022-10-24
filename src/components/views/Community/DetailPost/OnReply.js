@@ -11,10 +11,10 @@ import { getReply } from "../../../../redux/_actions/reply_action";
 import { useParams } from "react-router-dom";
 
 function OnReply(props) {
-  const [replyName, setReplyName] = useState()
-  const [replyFrom, setReplyFrom] = useState()
+  const [replyName, setReplyName] = useState(null)
+  const [replyFrom, setReplyFrom] = useState(null)
   //해당 커맨드의 인덱스 넘버이며 커맨드에 넘버와 비교하여 답글이 있음을 체크하기 위한 저장 값
-  const [comNum, setComNum] = useState()
+  const [comNum, setComNum] = useState(null)
   //해당 커맨드 -> 답글 인덱스 넘버
   const [repNum, setRepNum] = useState()
   const postId = useParams().postId;
@@ -63,6 +63,8 @@ function OnReply(props) {
           setOnCom(false);
         }
       });
+    setComNum(null)
+
   };
   const onSubmit = () => {
 
@@ -79,14 +81,21 @@ function OnReply(props) {
           replyName,
         })
         .then((response) => {
+          // alert(comNum)
+
           if (!response.data.success) {
-            alert( replyFrom)
+            console.log( response)
           }
         });
       setContents("");
+    setComNum(null)
+    setReplyName("");
+
+
     }
     setTimeout(() => {
     fetchUserList();
+
     }, 500);
   };
   const renderCards = Reply.map((reply, index) => {

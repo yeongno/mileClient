@@ -32,20 +32,24 @@ function ReplyRendering(props) {
           setUserFrom(Reply1.req[props.index].userFrom);
           setContents(Reply1.req[props.index].content);
           setReplyName(Reply1.req[props.index].replyName);
-          setComNum(Reply1.req[props.index]?.comNum);
+          setComNum(Reply1.req[props.index].comNum);
           setDate(Reply1.req[props.index].createdAt);
          
   };
   const onReply=()=>{
     props.setReplyFrom(UserFrom)
     props.setReplyName(UserName)
+    props.setComNum(props.index);
+    // alert(Reply1.req[props.index].comNum)
+
     //todo
-    if(comNum === [props.index]){
+    if(comNum === Reply1.req[props.index].comNum){
       alert(comNum)
     }
     props.setRepNum(props.index)
 
-    props.setComNum(props.index)
+    // props.setComNum(props.index)
+    // alert(props.comNum)
 
     console.log(UserFrom);
   }
@@ -65,7 +69,7 @@ function ReplyRendering(props) {
 
   <div className="topReplySection_DetailPost">
   {
-    ReplyName && <div className="activReplyReplySection_DetailPost"></div>
+    comNum && <div className="activReplyReplySection_DetailPost"></div>
   }
     <div className="profileReplySection_DetailPost">
 
@@ -77,7 +81,7 @@ function ReplyRendering(props) {
       <a>복무중</a>
       <br />
         {
-          ReplyName &&(
+          comNum &&(
       <span>
 
             @{ReplyName} 
@@ -90,7 +94,7 @@ function ReplyRendering(props) {
 
   <div className="bottomeReplySection_DetailPost">
   {
-    ReplyName && <div className="activReplyReplySection_DetailPost"></div>
+    comNum && <div className="activReplyReplySection_DetailPost"></div>
   }  <a onClick={onReply}>답글쓰기</a>
     <a>{moment(createdDate).fromNow()}</a>
   </div>
