@@ -84,7 +84,7 @@ function OnReply(props) {
           // alert(comNum)
 
           if (!response.data.success) {
-            console.log( response)
+            // console.log( response)
           }
         });
       setContents("");

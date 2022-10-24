@@ -8,7 +8,6 @@ import ReplySection from "./ReplySection";
 
 function DetailPost(props) {
   const postId = useParams().postId;
-  console.log(postId);
   const dispatch = useDispatch();
   const [Title, setTitle] = useState("");
   const { setOnDetailPost } = useOutletContext();

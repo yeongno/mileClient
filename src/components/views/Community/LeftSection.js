@@ -7,7 +7,6 @@ function LeftSection(props) {
   useEffect(() => {
     setOnDetailPost(props.OnDetailPost);
   }, [props.OnDetailPost]);
-  console.log(OnDetailPost);
   return (
     <div>
       {OnDetailPost === false && <Banner />}

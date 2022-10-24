@@ -4,8 +4,6 @@ import "../../../styles/CommunityPage/DetailPost/ReplySection.scss";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 import "moment/locale/ko";
-import ReplyRendering from "./ReplyRendering";
-import { Col } from "antd";
 
 function ReplyRendering1(props) {
   const postId = useParams().postId;
@@ -47,9 +45,7 @@ function ReplyRendering1(props) {
       <div className="replyListReplySection_DetailPost">
       
         <div className="topReplySection_DetailPost">
-        {
-          comNum && <div className="activReplyReplySection_DetailPost"></div>
-        }
+           <div className="activReplyReplySection_DetailPost"></div>
           <div className="profileReplySection_DetailPost">
       
             <img src={"/assets/profile.png"} />
@@ -59,22 +55,16 @@ function ReplyRendering1(props) {
       </a>
             <a>복무중</a>
             <br />
-              {
-                comNum &&(
             <span>
       
                   @{ReplyName} 
                   </span>    
-                  )
-              }
               <a>{Content}</a>
           </div>
         </div>
       
         <div className="bottomeReplySection_DetailPost">
-        {
-          comNum && <div className="activReplyReplySection_DetailPost"></div>
-        }  
+ <div className="activReplyReplySection_DetailPost"></div>
           <a>{moment(createdDate).fromNow()}</a>
         </div>
       </div>

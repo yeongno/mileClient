@@ -47,16 +47,14 @@ function ReplyRendering(props) {
   return (
 
     <Col key={index}>
-          {
-    props.index &&(
+ 
        <div>
         <ReplyRendering1 reply={reply} index={index} setReplyName={setReplyName} setReplyFrom={props.setReplyFrom}
         NowIndex={NowIndex}
        />
-        {reply.length}
+        {/* {reply.length} */}
       </div>
-    )
-    }
+    
      
     </Col>
   );
@@ -67,16 +65,12 @@ function ReplyRendering(props) {
     props.setComNum(props.index);
     // alert(Reply1.req[props.index].comNum)
 
-    //todo
-    if(comNum === Reply1.req[props.index].comNum){
-      alert(comNum)
-    }
     props.setRepNum(props.index)
 
     // props.setComNum(props.index)
     // alert(props.comNum)
 
-    console.log(UserFrom);
+    // console.log(UserFrom);
   }
   return (
     <div>
@@ -87,9 +81,6 @@ function ReplyRendering(props) {
           <div className="replyListReplySection_DetailPost">
           
             <div className="topReplySection_DetailPost">
-            {
-              comNum && <div className="activReplyReplySection_DetailPost"></div>
-            }
               <div className="profileReplySection_DetailPost">
           
                 <img src={"/assets/profile.png"} />
@@ -99,22 +90,15 @@ function ReplyRendering(props) {
           </a>
                 <a>복무중</a>
                 <br />
-                  {
-                    comNum &&(
                 <span>
           
-                      @{ReplyName} 
                       </span>    
-                      )
-                  }
                   <a>{Content}</a>
               </div>
             </div>
           
             <div className="bottomeReplySection_DetailPost">
-            {
-              comNum && <div className="activReplyReplySection_DetailPost"></div>
-            }  <a onClick={onReply}>답글쓰기</a>
+              <a onClick={onReply}>답글쓰기</a>
               <a>{moment(createdDate).fromNow()}</a>
             </div>
           </div>
@@ -125,28 +109,6 @@ function ReplyRendering(props) {
         )
       }
      
-        {/* <ReplyOnRendering
-          UserFrom={UserFrom}
-          UserImg={UserImg}
-          CreatedAt={CreatedAt}
-          Content={Content}
-          UserName={UserName}
-        /> */}
-       
-        
-        {/* // <img
-        //   style={{
-        //     width: "5%",
-        //     height: "5%",
-        //     border: "1px solid lightgray",
-        //     alignItems: "center",
-        //     justifyContent: "center",
-        //     borderRadius: "50px",
-        //     boxShadow: "1px 1px 1px 1px inset",
-        //   }}
-        //   src={`http://localhost:5000/${UserImg}`}
-        //   alt="프로필"
-        // /> */}
     </div>
   );
 }
