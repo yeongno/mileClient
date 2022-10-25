@@ -67,9 +67,10 @@ function OnReply(props) {
 
   };
   const onSubmit = () => {
+
+    //답글달기 전의 위치로 이동
     if(scrollNow){
       window.scrollTo(0,scrollNow)
-
     }
 
     if (Contentset) {
