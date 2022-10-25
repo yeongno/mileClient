@@ -1,3 +1,5 @@
+//댓글에 달린 답글들을 랜더링 하기 위한 컴포넌트
+
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "../../../styles/CommunityPage/DetailPost/ReplySection.scss";
@@ -8,17 +10,30 @@ import "moment/locale/ko";
 function ReplyRendering1(props) {
   const postId = useParams().postId;
 
-    const Post = useSelector((state) => state.post.postOne);
-    const [UserImg, setUserImg] = useState("");
+  const [UserImg, setUserImg] = useState("");
+
+  //해당 유저 이름
   const [UserName, setUserName] = useState("");
+
+  //해당 유저 id값
   const [UserFrom, setUserFrom] = useState("");
+
+  //댓글 내용
   const [Content, setContents] = useState("");
+
+  //댓글 생성 시간 값
   const [CreatedAt, setDate] = useState("");
+
+  //답글을 다는 대상이 되는 댓글의 작성자 이름
   const [ReplyName, setReplyName] = useState("");
-  const [OnReply, setOnReply] = useState(false);
-  //onReply의 comNum와 비교할 값이며 해당 커멘드 넘버
+
+  //답글이 달릴 해당 상위 댓글의 인덱스 값 (해당 커멘드 넘버)
   const [comNum, setComNum] = useState(null);
+
+  //댓글/답글 을 가져오기 위한 객체
   const Reply1 = useSelector((state) => state.reply.getReply);
+
+  //moment 라이브러리를 사용하여 포맷하여 날짜/시간 값 사용
   const createdDate = moment(CreatedAt);
 
   useEffect(() => {
@@ -71,8 +86,6 @@ function ReplyRendering1(props) {
       <div className="subPartitionReplySection_DetailPost" />
       </div>
           )
-
-          
         }
       </div>
       

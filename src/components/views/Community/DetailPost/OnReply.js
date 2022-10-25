@@ -1,3 +1,5 @@
+//댓글 기능에 있어 값을 불러오고 값을 세팅하는 최상위 컴포넌트
+
 import { CloseSquareOutlined, MessageOutlined } from "@ant-design/icons";
 import { Button, Col, Form, Input } from "antd";
 import axios from "axios";
@@ -13,21 +15,29 @@ import { useParams } from "react-router-dom";
 function OnReply(props) {
   const [replyName, setReplyName] = useState(null)
   const [replyFrom, setReplyFrom] = useState(null)
-  //해당 커맨드의 인덱스 넘버이며 커맨드에 넘버와 비교하여 답글이 있음을 체크하기 위한 저장 값
+
+  //답글이 달릴 해당 상위 댓글의 인덱스 값 (해당 커멘드 넘버)
   const [comNum, setComNum] = useState(null)
-  //해당 커맨드 -> 답글 인덱스 넘버
-  const [repNum, setRepNum] = useState()
+
   const postId = useParams().postId;
-  const Post = useSelector((state) => state.post.postOne);
-    const user = useSelector((state) => state.user);
-  // const [FilePath, setFilePath] = useState("");
-  const [Contentset, setContents] = useState("");
-  const [Reply, setReply] = useState([]);
-  const [OnCom, setOnCom] = useState(false);
+
+  //유저 데이터 객체 값 사용
+  const user = useSelector((state) => state.user);
   const userId = user.userData?._id;
   const userName = user.userData?.name;
+
+  // const [FilePath, setFilePath] = useState("");
+
+  //댓글/답글 세팅하고 있는 내용
+  const [Contentset, setContents] = useState("");
+
+  //댓글/답글을 불러오기 위한 객체
+  const [Reply, setReply] = useState([]);
+  
+  //댓글이 있음 없음을 체크
+  const [OnCom, setOnCom] = useState(false);
+
   const dispatch = useDispatch();
-  const Reply1 = useSelector((state) => state.reply.getReply);
   const onContentHandler = (event) => {
     setContents(event.currentTarget.value);
   };
@@ -89,12 +99,14 @@ function OnReply(props) {
       <Col key={index}>
         <div>
           <ReplyRendering reply={reply} index={index} setReplyName={setReplyName} setReplyFrom={setReplyFrom}
-           setRepNum={setRepNum} setComNum={setComNum}/>
+           setComNum={setComNum}/>
           {reply.length}
         </div>
       </Col>
     );
   });
+
+  //답글 달기 취소
   const OffReply = ()=>{
     setReplyName("");
   }

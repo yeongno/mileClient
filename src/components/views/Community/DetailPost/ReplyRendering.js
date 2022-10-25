@@ -1,3 +1,5 @@
+//댓글을 랜더링 하기 위한 컴포넌트
+
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "../../../styles/CommunityPage/DetailPost/ReplySection.scss";
@@ -10,20 +12,32 @@ import { Col } from "antd";
 function ReplyRendering(props) {
   const postId = useParams().postId;
 
-    const Post = useSelector((state) => state.post.postOne);
-    const [UserImg, setUserImg] = useState("");
+  const [UserImg, setUserImg] = useState("");
+
+  //해당 유저 이름
   const [UserName, setUserName] = useState("");
+
+  //해당 유저 id값
   const [UserFrom, setUserFrom] = useState("");
+
+  //댓글 내용
   const [Content, setContents] = useState("");
+
+  //댓글 생성 시간 값
   const [CreatedAt, setDate] = useState("");
-  const [ReplyName, setReplyName] = useState("");
+
+  //불러온 댓글 중 해당 댓글의 인덱스 값
   const [NowIndex, setNowIndex] = useState(null);
 
   const [OnReply, setOnReply] = useState(false);
-  //onReply의 comNum와 비교할 값이며 해당 커멘드 넘버
+
+  //답글이 달릴 해당 상위 댓글의 인덱스 값 (해당 커멘드 넘버)
   const [comNum, setComNum] = useState(null);
-  const Reply1 = useSelector((state) => state.reply.getReply);
-  const Reply2 = useSelector((state) => state.reply.getReply.req);
+
+  //댓글/답글 을 가져오기 위한 객체
+  const Reply1 = useSelector((state) => state.reply.getReply.req);
+
+  //moment 라이브러리를 사용하여 포맷하여 날짜/시간 값 사용
   const createdDate = moment(CreatedAt);
 
   useEffect(() => {
@@ -33,23 +47,23 @@ function ReplyRendering(props) {
   const fetchUserList = () => {
 
     setNowIndex(props.index)
-          setUserImg(Reply1.req[props.index].proFileImg);
-          setUserName(Reply1.req[props.index].userName);
-          setUserFrom(Reply1.req[props.index].userFrom);
-          setContents(Reply1.req[props.index].content);
-          setReplyName(Reply1.req[props.index].replyName);
-          setComNum(Reply1.req[props.index].comNum);
-          setDate(Reply1.req[props.index].createdAt);
+          setUserImg(Reply1[props.index].proFileImg);
+          setUserName(Reply1[props.index].userName);
+          setUserFrom(Reply1[props.index].userFrom);
+          setContents(Reply1[props.index].content);
+          // setReplyName(Reply1[props.index].replyName);
+          setComNum(Reply1[props.index].comNum);
+          setDate(Reply1[props.index].createdAt);
          
   };
 
- const renderCards = Reply2.map((reply, index) => {
+ const renderCards = Reply1.map((reply, index) => {
   return (
 
     <Col key={index}>
  
        <div>
-        <ReplyRendering1 reply={reply} index={index} setReplyName={setReplyName} setReplyFrom={props.setReplyFrom}
+        <ReplyRendering1 reply={reply} index={index}  setReplyFrom={props.setReplyFrom}
         NowIndex={NowIndex}
        />
         {/* {reply.length} */}
