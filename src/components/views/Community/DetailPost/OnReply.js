@@ -38,6 +38,9 @@ function OnReply(props) {
   //댓글이 있음 없음을 체크
   const [OnCom, setOnCom] = useState(false);
 
+  //답글 클릭 시 스크롤 위치
+  const [scrollNow, setScrollNow] = useState()
+
   const dispatch = useDispatch();
   const onContentHandler = (event) => {
     setContents(event.currentTarget.value);
@@ -64,6 +67,10 @@ function OnReply(props) {
 
   };
   const onSubmit = () => {
+    if(scrollNow){
+      window.scrollTo(0,scrollNow)
+
+    }
 
     if (Contentset) {
       axios
@@ -87,6 +94,7 @@ function OnReply(props) {
       setContents("");
     setComNum(null)
     setReplyName("");
+    setScrollNow(null);
 
     }
     setTimeout(() => {
@@ -99,7 +107,7 @@ function OnReply(props) {
       <Col key={index}>
         <div>
           <ReplyRendering reply={reply} index={index} setReplyName={setReplyName} setReplyFrom={setReplyFrom}
-           setComNum={setComNum}/>
+           setComNum={setComNum} setScrollNow={setScrollNow}/>
           {reply.length}
         </div>
       </Col>
@@ -141,7 +149,7 @@ function OnReply(props) {
           }
           <Input
           className="inputOnReply_DetailPost"
-id="inputOnReply_DetailPost"
+            id="inputOnReply_DetailPost"
             placeholder="댓글을 입력하세요"
             onChange={onContentHandler}
             onPressEnter={onSubmit}

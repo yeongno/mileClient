@@ -74,13 +74,15 @@ function ReplyRendering(props) {
     </Col>
   );
 });
-const onMoveToElement1 = () => {
+
+//답글 쓰는 요소로 뷰 이동
+const onMoveToElement = () => {
   document.getElementById("inputOnReply_DetailPost").scrollIntoView(false);
-  //move.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
+
   const onReply=()=>{
-    onMoveToElement1();
-    // console.log(window.scrollY);
+    props.setScrollNow(window.scrollY);
+    onMoveToElement();
     props.setReplyFrom(UserFrom)
     props.setReplyName(UserName)
     props.setComNum(props.index);
