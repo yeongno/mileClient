@@ -75,7 +75,7 @@ function ReplyRendering(props) {
   return (
     <div>
       {
-        !comNum &&(
+        (comNum === null) &&(
           <div className="ReplySectionContainer_DetailPost">
 
           <div className="replyListReplySection_DetailPost">

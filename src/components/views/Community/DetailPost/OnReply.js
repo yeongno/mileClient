@@ -38,20 +38,6 @@ function OnReply(props) {
 
   }, [postId]);
   const fetchUserList = () => {
-    // if (Post) {
-    //     setPostId(Post[0]._id);
-    //   }
-    // axios
-    //   .post("/api/users/getProFile", {
-    //     userFrom: userId,
-    //   })
-    //   .then((response) => {
-    //     if (response.data.success) {
-    //       setFilePath(response.data.userInfo[0].proFileImg);
-    //     } else {
-    //       alert("유저 정보를 가져오는데 실패하였습니다.");
-    //     }
-    //   });
 
     dispatch(getReply({postFrom:postId}))
     .then((response) => {
