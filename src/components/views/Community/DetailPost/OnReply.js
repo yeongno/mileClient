@@ -3,7 +3,7 @@
 import { CloseSquareOutlined, MessageOutlined } from "@ant-design/icons";
 import { Button, Col, Form, Input } from "antd";
 import axios from "axios";
-import React from "react";
+import React, { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,8 +11,9 @@ import ReplyRendering from "./ReplyRendering";
 import "../../../styles/CommunityPage/DetailPost/OnReply.scss"
 import { getReply } from "../../../../redux/_actions/reply_action";
 import { useParams } from "react-router-dom";
-
+import useMoveScroll from "../../../../hook/useMoveScroll";
 function OnReply(props) {
+
   const [replyName, setReplyName] = useState(null)
   const [replyFrom, setReplyFrom] = useState(null)
 
@@ -87,7 +88,6 @@ function OnReply(props) {
     setComNum(null)
     setReplyName("");
 
-
     }
     setTimeout(() => {
     fetchUserList();
@@ -141,13 +141,16 @@ function OnReply(props) {
           }
           <Input
           className="inputOnReply_DetailPost"
+id="inputOnReply_DetailPost"
             placeholder="댓글을 입력하세요"
             onChange={onContentHandler}
             onPressEnter={onSubmit}
             value={Contentset}
           />
         </div>
-        <div className="bottomContainerOnReply_DetailPost">
+        <div className="bottomContainerOnReply_DetailPost"
+
+        >
           글을 게시하려면 Enter 키를 누르세요.
         </div>
       </div>

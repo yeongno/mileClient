@@ -57,6 +57,7 @@ function ReplyRendering(props) {
          
   };
 
+
  const renderCards = Reply1.map((reply, index) => {
   return (
 
@@ -73,19 +74,26 @@ function ReplyRendering(props) {
     </Col>
   );
 });
+const onMoveToElement1 = () => {
+  document.getElementById("inputOnReply_DetailPost").scrollIntoView(false);
+  //move.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
   const onReply=()=>{
+    onMoveToElement1();
+    // console.log(window.scrollY);
     props.setReplyFrom(UserFrom)
     props.setReplyName(UserName)
     props.setComNum(props.index);
     // alert(Reply1.req[props.index].comNum)
 
-    props.setRepNum(props.index)
+    // props.setRepNum(props.index)
 
     // props.setComNum(props.index)
     // alert(props.comNum)
 
     // console.log(UserFrom);
   }
+
   return (
     <div>
       {
