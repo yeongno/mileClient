@@ -118,6 +118,7 @@ function OnReply(props) {
   //답글 달기 취소
   const OffReply = ()=>{
     setReplyName("");
+    window.scrollTo(0,scrollNow)
   }
 
   return (
