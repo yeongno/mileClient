@@ -1,14 +1,21 @@
 import { UsbOutlined } from "@ant-design/icons";
 import React from "react";
+import { useState } from "react";
 import "../../styles/CommunityPage/MenuBarCom.scss";
 
-function MenuBarCom() {
+function MenuBarCom(props) {
   return (
     <div className="MenuBarCom_container">
       <div className="roof_MenuBarCom"></div>
       <div className="leftMenuBarCom_container">
-        <button>전체</button>
-        <div className="partition_MenuBarCom" />
+        <button onClick={()=>{
+          props.setClass("public")
+        }}>전체</button>
+        <div className="partition_MenuBarCom" 
+        onClick={()=>{
+          props.setClass("division")
+        }}
+        />
         <button>사단/근무지</button>
         <div className="partition_MenuBarCom" />
         <button>펫</button>

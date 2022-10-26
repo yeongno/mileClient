@@ -15,6 +15,10 @@ import MenuBarCom from "./MenuBarCom";
 import DetailPost from "./DetailPost/DetailPost";
 
 function CommunityPage() {
+
+  //menuBar에서 leftsSection->listSection으로 넘어가는 class 선택 값 
+  const [onClass, setClass] = useState("public");
+
   const [MenuBar, setMenuBar] = useState("전체");
   const [OnDetailPost, setOnDetailPost] = useState(false);
   const navigate = useNavigate();
@@ -34,12 +38,12 @@ function CommunityPage() {
     <div className="main_container">
       <div className="inner_container_pc">
         <div className="navBarCom_container">
-          <MenuBarCom />
+          <MenuBarCom setClass={setClass}/>
           <Outlet context={{ setOnDetailPost }} />
         </div>
         <div className="bodyCom_container">
           <div className="leftCom_container">
-            <LeftSection OnDetailPost={OnDetailPost} />
+            <LeftSection OnDetailPost={OnDetailPost} onClass={onClass}/>
           </div>
           <div className="rightCom_container">
             <RightSection />

@@ -10,7 +10,7 @@ function LeftSection(props) {
   return (
     <div>
       {OnDetailPost === false && <Banner />}
-      <ListSection />
+      <ListSection onClass={props.onClass} />
     </div>
   );
 }

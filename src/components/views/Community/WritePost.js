@@ -11,6 +11,7 @@ function WritePost() {
   const [Content, setContent] = useState("");
   const [FilePath, setFilePath] = useState("");
   const [Topic, setTopic] = useState("public");
+  const [Class, setClass] = useState("public");
   const userFrom = localStorage.getItem("userId");
 
   const onTitleHandler = (event) => {
@@ -180,6 +181,27 @@ function WritePost() {
                 }}
               >
                 후기
+              </p>
+              <p
+                onClick={() => {
+                  onTopic("whole");
+                }}
+              >
+                전체
+              </p>
+              <p
+                onClick={() => {
+                  setClass("public");
+                }}
+              >
+                class 전체
+              </p>
+              <p
+                onClick={() => {
+                  setClass("division");
+                }}
+              >
+                class 분단
               </p>
             </div>
           </div>
