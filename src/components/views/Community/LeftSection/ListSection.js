@@ -11,7 +11,7 @@ import moment from "moment";
 import Notice from "./Notice";
 import Footer from "./Footer";
 
-function ListSection() {
+function ListSection(props) {
   const dispatch = useDispatch();
   const Post = useSelector((state) => state.post.posts);
   const [LastIndex, setLastIndex] = useState(0);
@@ -31,10 +31,11 @@ function ListSection() {
   }
 
   const fetchPostList = () => {
-    dispatch(getPost({ topic: ThisTopic })).then((response) => {
+    dispatch(getPost({ topic: ThisTopic , class: props.onClass})).then((response) => {
       if (response.payload.success) {
         setPosts(response.payload.posts);
         setLastIndex(response.payload.posts.length);
+        console.log(response.payload.posts)
       } else {
         alert("게시글 정보를 가져오는데 실패하였습니다.");
       }
@@ -48,21 +49,21 @@ function ListSection() {
 
     return (
       <div className="ListContainer_ListSection" key={index}>
-        <p> {Post[index].topic}</p>
+        <p> {Post[index]?.topic}</p>
         <p>
           {" "}
           <Link
             style={{
               color: "gray",
             }}
-            to={`/community/${Post[index]._id}`}
+            to={`/community/${Post[index]?._id}`}
             onClick={onDetail}
           >
-            {Post[index].title}
+            {Post[index]?.title}
           </Link>
         </p>{" "}
         <p> 글쓴이</p>
-        <p>{moment(Post[index].createdAt).format("YY[/]M[/]D")}</p>
+        <p>{moment(Post[index]?.createdAt).format("YY[/]M[/]D")}</p>
         <p>{index}</p>
         <p>-</p>
         <div className="partitionList_ListSection" />
@@ -71,7 +72,7 @@ function ListSection() {
   });
   return (
     <div>
-      <Header setThisTopic={setThisTopic} setThisPaging={setThisPaging} />
+      <Header setThisTopic={setThisTopic} setThisPaging={setThisPaging} onClass={props.onClass}/>
       <div className="partitionListSection_LeftSection" />
       <TopLabel />
       <Notice />

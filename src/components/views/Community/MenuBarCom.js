@@ -12,11 +12,11 @@ function MenuBarCom(props) {
           props.setClass("public")
         }}>전체</button>
         <div className="partition_MenuBarCom" 
-        onClick={()=>{
-          props.setClass("division")
-        }}
+   
         />
-        <button>사단/근무지</button>
+        <button      onClick={()=>{
+          props.setClass("division")
+        }}>사단/근무지</button>
         <div className="partition_MenuBarCom" />
         <button>펫</button>
         <div className="partition_MenuBarCom" />

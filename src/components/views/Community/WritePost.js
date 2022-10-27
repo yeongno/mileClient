@@ -32,6 +32,7 @@ function WritePost() {
       userFrom: userFrom,
       imagePath: FilePath,
       topic: Topic,
+      class: Class,
     };
     dispatch(postGo(body)).then((response) => {
       if (response.payload.success) {

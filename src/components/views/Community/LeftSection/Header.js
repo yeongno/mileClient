@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../styles/CommunityPage/LeftSection/Header.scss";
 function Header(props) {
+  
+
+  //todo 
+  //class 이름 Title이랑 바꾸기
   const navigate = useNavigate();
-  const [Title, setTitle] = useState("공용");
+  const [Topic, setTopic] = useState("전체");
+  const [Title, setTitle] = useState("전체");
+  useEffect(() => {
+    if(
+      props.onClass === "public"
+    ) setTitle("전체")
+    if(
+      props.onClass === "division"
+    ) setTitle("사단")
+  }, [props.onClass])
+
+  
   const goWrite = () => {
     navigate("/writePost");
     props.setThisPaging(1);
@@ -42,84 +57,84 @@ function Header(props) {
     <div className="containerHeader_LeftSection">
       <p>{Title} 게시판</p>
       <div className="partitionHeader_LeftSection" />
-      {Title === "전체" && <p className="activeHeader_LeftSection">전체</p>}
-      {Title !== "전체" && (
+      {Topic === "전체" && <p className="activeHeader_LeftSection">전체</p>}
+      {Topic !== "전체" && (
         <p
           onClick={() => {
             goWhole("whole");
-            setTitle("전체");
+            setTopic("전체");
           }}
         >
           전체
         </p>
       )}
       <div className="partitionHeader_LeftSection" />
-      {Title === "공지" && <p className="activeHeader_LeftSection">공지</p>}
-      {Title !== "공지" && (
+      {Topic === "공지" && <p className="activeHeader_LeftSection">공지</p>}
+      {Topic !== "공지" && (
         <p
           onClick={() => {
             goNotice("notice");
-            setTitle("공지");
+            setTopic("공지");
           }}
         >
           공지
         </p>
       )}
       <div className="partitionHeader_LeftSection" />
-      {Title === "인기" && <p className="activeHeader_LeftSection">인기</p>}
-      {Title !== "인기" && (
+      {Topic === "인기" && <p className="activeHeader_LeftSection">인기</p>}
+      {Topic !== "인기" && (
         <p
           onClick={() => {
             goFavorite("favorite");
-            setTitle("인기");
+            setTopic("인기");
           }}
         >
           인기
         </p>
       )}{" "}
       <div className="partitionHeader_LeftSection" />
-      {Title === "자유" && <p className="activeHeader_LeftSection">자유</p>}
-      {Title !== "자유" && (
+      {Topic === "자유" && <p className="activeHeader_LeftSection">자유</p>}
+      {Topic !== "자유" && (
         <p
           onClick={() => {
             goFree("free");
-            setTitle("자유");
+            setTopic("자유");
           }}
         >
           자유
         </p>
       )}{" "}
       <div className="partitionHeader_LeftSection" />
-      {Title === "질문" && <p className="activeHeader_LeftSection">질문</p>}
-      {Title !== "질문" && (
+      {Topic === "질문" && <p className="activeHeader_LeftSection">질문</p>}
+      {Topic !== "질문" && (
         <p
           onClick={() => {
             goQuestion("question");
-            setTitle("질문");
+            setTopic("질문");
           }}
         >
           질문
         </p>
       )}{" "}
       <div className="partitionHeader_LeftSection" />
-      {Title === "자랑" && <p className="activeHeader_LeftSection">자랑</p>}
-      {Title !== "자랑" && (
+      {Topic === "자랑" && <p className="activeHeader_LeftSection">자랑</p>}
+      {Topic !== "자랑" && (
         <p
           onClick={() => {
             goBoast("boast");
-            setTitle("자랑");
+            setTopic("자랑");
           }}
         >
           자랑
         </p>
       )}{" "}
       <div className="partitionHeader_LeftSection" />
-      {Title === "후기" && <p className="activeHeader_LeftSection">후기</p>}
-      {Title !== "후기" && (
+      {Topic === "후기" && <p className="activeHeader_LeftSection">후기</p>}
+      {Topic !== "후기" && (
         <p
           onClick={() => {
             goReview("review");
-            setTitle("후기");
+            setTopic("후기");
           }}
         >
           후기
