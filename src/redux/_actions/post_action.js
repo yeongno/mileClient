@@ -4,7 +4,7 @@ const PROXY = window.location.hostname === "api" ? "" : "/proxy";
 
 export function postGo(dataToSubmit1) {
   const request = axios
-    .post(`/${PROXY}/posts/post`, dataToSubmit1)
+    .post(`/${PROXY}/api/posts/post`, dataToSubmit1)
     .then((response) => response.data);
 
   return {
@@ -20,7 +20,7 @@ export function postGo(dataToSubmit1) {
  */
 export function getPost(dataToSubmit1) {
   const request = axios
-    .post(`/${PROXY}/posts/getPost`, dataToSubmit1)
+    .post(`/${PROXY}/api/posts/getPost`, dataToSubmit1)
     .then((response) => response.data);
 
   return {
@@ -30,7 +30,7 @@ export function getPost(dataToSubmit1) {
 }
 export function getNotice(dataToSubmit1) {
   const request = axios
-    .post(`/${PROXY}/posts/getPost`, dataToSubmit1)
+    .post(`/${PROXY}/api/posts/getPost`, dataToSubmit1)
     .then((response) => response.data);
 
   return {
@@ -45,7 +45,7 @@ export function getNotice(dataToSubmit1) {
  */
 export function getOnePost(dataToSubmit1) {
   const request = axios
-    .post(`/${PROXY}/posts/getOnePost`, dataToSubmit1)
+    .post(`/${PROXY}/api/posts/getOnePost`, dataToSubmit1)
     .then((response) => response.data);
 
   return {
