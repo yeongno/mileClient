@@ -5,5 +5,5 @@
 
 [[redirects]]
   from = "/proxy/*"
-  to = "https://mileclient.netlify.app"
+  to = "https://mileclient.netlify.app:splat"
   status = 200
