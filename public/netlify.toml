@@ -1,0 +1,9 @@
+[build]
+  command = "CI=false npm run build"
+  publish = "/build"
+  base ="/"
+
+[[redirects]]
+  from = "/proxy/*"
+  to = "https://mileclient.netlify.app"
+  status = 200
