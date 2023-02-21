@@ -4,6 +4,6 @@
   base ="/"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/proxy/*"
+  to = "https://mileclient.netlify.app"
   status = 200
