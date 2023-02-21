@@ -23,23 +23,25 @@ function ListSection(props) {
   useEffect(() => {
     fetchPostList();
   }, [ThisTopic, LastIndex]);
-  const onDetail=()=>{
+  const onDetail = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
-  }
+  };
 
   const fetchPostList = () => {
-    dispatch(getPost({ topic: ThisTopic , class: props.onClass})).then((response) => {
-      if (response.payload.success) {
-        setPosts(response.payload.posts);
-        setLastIndex(response.payload.posts.length);
-        console.log(response.payload.posts)
-      } else {
-        alert("게시글 정보를 가져오는데 실패하였습니다.");
+    dispatch(getPost({ topic: ThisTopic, class: props.onClass })).then(
+      (response) => {
+        if (response.payload.success) {
+          setPosts(response.payload.posts);
+          setLastIndex(response.payload.posts.length);
+          console.log(response.payload.posts);
+        } else {
+          alert("게시글 정보를 가져오는데 실패하였습니다.");
+        }
       }
-    });
+    );
   };
 
   const renderCards = Posts.map((posts, index) => {
@@ -72,7 +74,11 @@ function ListSection(props) {
   });
   return (
     <div>
-      <Header setThisTopic={setThisTopic} setThisPaging={setThisPaging} onClass={props.onClass}/>
+      <Header
+        setThisTopic={setThisTopic}
+        setThisPaging={setThisPaging}
+        onClass={props.onClass}
+      />
       <div className="partitionListSection_LeftSection" />
       <TopLabel />
       <Notice />
