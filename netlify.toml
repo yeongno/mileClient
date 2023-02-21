@@ -3,3 +3,7 @@
   publish = "/build"
   base ="/"
 
+[[redirects]]
+  from = "/proxy/*"
+  to = "http://boilernodeserver.herokuapp.com:splat"
+  status = 200

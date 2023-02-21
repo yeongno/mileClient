@@ -1,2 +1,2 @@
-/api/* http://boilernodeserver.herokuapp.com/:splat 200
+/api/* https://mileclient.netlify.app/:splat 200
 /* /index.html 200
