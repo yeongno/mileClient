@@ -5,5 +5,5 @@
 
 [[redirects]]
   from = "/proxy/*"
-  to = "http://boilernodeserver.herokuapp.com:splat"
+  to = "http://boilernodeserver.herokuapp.com/:splat"
   status = 200
