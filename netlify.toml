@@ -4,6 +4,6 @@
   base ="/"
 
 [[redirects]]
-  from = "mileclient.netlify.app"
-  to = "mileclient.netlify.app"
+  from = "/proxy/*"
+  to = "http://boilernodeserver.herokuapp.com:splat"
   status = 200
