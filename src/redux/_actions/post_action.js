@@ -1,8 +1,8 @@
 import axios from "axios";
 import instance from "../../axios";
 import { POSTNOTICE_GET, POST_GET, POST_GO, POST_ONEGET } from "./types";
-const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
-const URL = `${PROXY}/api/posts/getPost`;
+// const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
+// const URL = `${PROXY}/api/posts/getPost`;
 export function postGo(dataToSubmit1) {
   const request = instance
     .post("/api/posts/post", dataToSubmit1)
@@ -21,7 +21,7 @@ export function postGo(dataToSubmit1) {
  */
 export function getPost(dataToSubmit1) {
   const request = instance
-    .post(URL, dataToSubmit1)
+    .post("/api/posts/getPost", dataToSubmit1)
     .then((response) => response.data);
 
   return {
