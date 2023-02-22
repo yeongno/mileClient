@@ -112,9 +112,9 @@ function RegisterPage() {
           className="pwdcheck"
         />
         <br />
-        <Button className="regi" onClick={onSubmit}>
+        <button type="submit" className="regi" onClick={onSubmit}>
           회원가입
-        </Button>
+        </button>
       </form>
     </div>
   );

@@ -8,17 +8,17 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ReplyRendering from "./ReplyRendering";
-import "../../../styles/CommunityPage/DetailPost/OnReply.scss"
+import "../../../styles/CommunityPage/DetailPost/OnReply.scss";
 import { getReply } from "../../../../redux/_actions/reply_action";
 import { useParams } from "react-router-dom";
 import useMoveScroll from "../../../../hook/useMoveScroll";
+import instance from "../../../../axios";
 function OnReply(props) {
-
-  const [replyName, setReplyName] = useState(null)
-  const [replyFrom, setReplyFrom] = useState(null)
+  const [replyName, setReplyName] = useState(null);
+  const [replyFrom, setReplyFrom] = useState(null);
 
   //답글이 달릴 해당 상위 댓글의 인덱스 값 (해당 커멘드 넘버)
-  const [comNum, setComNum] = useState(null)
+  const [comNum, setComNum] = useState(null);
 
   const postId = useParams().postId;
 
@@ -34,47 +34,41 @@ function OnReply(props) {
 
   //댓글/답글을 불러오기 위한 객체
   const [Reply, setReply] = useState([]);
-  
+
   //댓글이 있음 없음을 체크
   const [OnCom, setOnCom] = useState(false);
 
   //답글 클릭 시 스크롤 위치
-  const [scrollNow, setScrollNow] = useState()
+  const [scrollNow, setScrollNow] = useState();
 
   const dispatch = useDispatch();
   const onContentHandler = (event) => {
     setContents(event.currentTarget.value);
   };
- 
 
   useEffect(() => {
     fetchUserList();
-
   }, [postId]);
   const fetchUserList = () => {
-
-    dispatch(getReply({postFrom:postId}))
-    .then((response) => {
-        if (response.payload.req[0]) {
-          // setUserImg(response.payload.req[0].proFileImg);
-          setReply(response.payload.req);
-          setOnCom(true);
-        } else {
-          setOnCom(false);
-        }
-      });
-    setComNum(null)
-
+    dispatch(getReply({ postFrom: postId })).then((response) => {
+      if (response.payload.req[0]) {
+        // setUserImg(response.payload.req[0].proFileImg);
+        setReply(response.payload.req);
+        setOnCom(true);
+      } else {
+        setOnCom(false);
+      }
+    });
+    setComNum(null);
   };
   const onSubmit = () => {
-
     //답글달기 전의 위치로 이동
-    if(scrollNow){
-      window.scrollTo(0,scrollNow)
+    if (scrollNow) {
+      window.scrollTo(0, scrollNow);
     }
 
     if (Contentset) {
-      axios
+      instance
         .post("/api/reply/setReply", {
           userFrom: userId,
           postFrom: postId,
@@ -93,22 +87,26 @@ function OnReply(props) {
           }
         });
       setContents("");
-    setComNum(null)
-    setReplyName("");
-    setScrollNow(null);
-
+      setComNum(null);
+      setReplyName("");
+      setScrollNow(null);
     }
     setTimeout(() => {
-    fetchUserList();
-
+      fetchUserList();
     }, 500);
   };
   const renderCards = Reply.map((reply, index) => {
     return (
       <Col key={index}>
         <div>
-          <ReplyRendering reply={reply} index={index} setReplyName={setReplyName} setReplyFrom={setReplyFrom}
-           setComNum={setComNum} setScrollNow={setScrollNow}/>
+          <ReplyRendering
+            reply={reply}
+            index={index}
+            setReplyName={setReplyName}
+            setReplyFrom={setReplyFrom}
+            setComNum={setComNum}
+            setScrollNow={setScrollNow}
+          />
           {reply.length}
         </div>
       </Col>
@@ -116,57 +114,41 @@ function OnReply(props) {
   });
 
   //답글 달기 취소
-  const OffReply = ()=>{
+  const OffReply = () => {
     setReplyName("");
-    window.scrollTo(0,scrollNow)
-  }
+    window.scrollTo(0, scrollNow);
+  };
 
   return (
     <div>
-
-  <div
-    className="OnReplyContainer_DetailPost"
-   
-    >
-      <div className="renderingContainer_DetailPost">
-        {/* reply rendering zone */}
-        <div>{OnCom&& <div>
-            {renderCards}
-           </div>}</div>
-      </div>
-      <div
-      className="submitOnReply_DetailPost"
-      >
-        <div
-          className="submitContainerOnReply_DetailPost"
-        >
-          {
-            replyName &&(
+      <div className="OnReplyContainer_DetailPost">
+        <div className="renderingContainer_DetailPost">
+          {/* reply rendering zone */}
+          <div>{OnCom && <div>{renderCards}</div>}</div>
+        </div>
+        <div className="submitOnReply_DetailPost">
+          <div className="submitContainerOnReply_DetailPost">
+            {replyName && (
               <div>
-              {replyName}<CloseSquareOutlined onClick={OffReply}/>
-                </div>
-
-
-            )
-          }
-          <Input
-          className="inputOnReply_DetailPost"
-            id="inputOnReply_DetailPost"
-            placeholder="댓글을 입력하세요"
-            onChange={onContentHandler}
-            onPressEnter={onSubmit}
-            value={Contentset}
-          />
-        </div>
-        <div className="bottomContainerOnReply_DetailPost"
-
-        >
-          글을 게시하려면 Enter 키를 누르세요.
+                {replyName}
+                <CloseSquareOutlined onClick={OffReply} />
+              </div>
+            )}
+            <Input
+              className="inputOnReply_DetailPost"
+              id="inputOnReply_DetailPost"
+              placeholder="댓글을 입력하세요"
+              onChange={onContentHandler}
+              onPressEnter={onSubmit}
+              value={Contentset}
+            />
+          </div>
+          <div className="bottomContainerOnReply_DetailPost">
+            글을 게시하려면 Enter 키를 누르세요.
+          </div>
         </div>
       </div>
     </div>
-    </div>
-  
   );
 }
 export default OnReply;
