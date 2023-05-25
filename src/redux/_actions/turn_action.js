@@ -1,4 +1,4 @@
-import { TURNOFF_MENUBAR, TURNOFF_SEARCH } from "./types";
+import { TURNMENU, TURNOFF_MENUBAR, TURNOFF_SEARCH } from "./types";
 
 /** 특정 섹션을 끄고 킨다.
  * @type {boolean}
@@ -25,6 +25,18 @@ export function MenuTurnOff(dataToSubmit) {
 export function SearchTurnOff(dataToSubmit) {
   return {
     type: TURNOFF_SEARCH,
+    value: dataToSubmit,
+  };
+}
+
+/**
+ * 메뉴 바꾸기 MAIN_MENU, MAP_MENU, COMMUNITY_MENU, TEST_MAP, INTERESTED_MAP
+ * @param {string "DEFAULT_MAP"} dataToSubmit
+ * @returns
+ */
+export function turnMenu(dataToSubmit) {
+  return {
+    type: TURNMENU,
     value: dataToSubmit,
   };
 }

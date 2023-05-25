@@ -1,10 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Outlet, useNavigate } from "react-router-dom";
+import instance from "../../axios";
+import useMenuSelector from "../../hook/useMenuSelector";
 
 function LandingPage() {
+  useMenuSelector();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
-    axios
+    navigate("/mainPage")
+    instance
       .post("/api/users/login", {
         email: "admin@naver.com",
         password: "admin",

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import instance from "../../../axios";
 
 function UserManagement() {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ function UserManagement() {
   }, []);
 
   const fetchUserList = () => {
-    axios.get("/api/users/getUsers").then((response) => {
+    instance.get("/api/users/getUsers").then((response) => {
       if (response.data.success) {
         setUsers(response.data.userInfo);
       } else {

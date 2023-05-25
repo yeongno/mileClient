@@ -1,4 +1,4 @@
-import { TURNOFF_MENUBAR, TURNOFF_SEARCH } from "../_actions/types";
+import { TURNMENU, TURNOFF_MENUBAR, TURNOFF_SEARCH } from "../_actions/types";
 
 export default function turn(state = {}, action) {
   switch (action.type) {
@@ -6,6 +6,8 @@ export default function turn(state = {}, action) {
       return { ...state, turnOffMenu: action.value };
     case TURNOFF_SEARCH:
       return { ...state, turnOffSearch: action.value };
+      case TURNMENU:
+        return { ...state, turnMenu: action.value };
       break;
     default:
       return state;

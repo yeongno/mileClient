@@ -1,9 +1,7 @@
 {
-  "proxy": "http://boilernodeserver.herokuapp.com",
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://boilernodeserver.herokuapp.com",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -11,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.22.7",
     "axios": "^0.27.2",
+    "cors": "^2.8.5",
     "http-proxy-middleware": "^2.0.6",
     "moment": "^2.29.4",
     "node-sass": "^7.0.1",
