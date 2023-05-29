@@ -1,5 +1,5 @@
 import axios from "axios";
-const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
+const PROXY = window.location.hostname === "localhost" ? "http://localhost:5000" : "/proxy";
 const URL = `${PROXY}/api/posts/getPost`;
 const instance = axios.create({
   baseURL: PROXY, // 요청을 www.aa.com/user로 보낸다면, www.aa.com까지 기록
