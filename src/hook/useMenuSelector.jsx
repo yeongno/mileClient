@@ -1,17 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { turnMenu } from "../redux/_actions/turn_action";
 const useMenuSelector = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const menu = useSelector((state) => state?.turn?.turnMenu);
+  const menu1 = useSelector((state) => state?.turn?.turnMenu);
+  const [menu, setInit] = useState(menu1)
   useEffect(() => {
     // executeMenu("MAIN_MENU");
-    // dispatch(turnMenu("MAIN_MENU"));
+    if(menu==undefined){
+        setInit("MAIN_MENU");
+    }
   }, []);
   useEffect(() => {
     executeMenu(menu);
   }, [menu]);
+  useEffect(() => {
+    setInit(menu1);
+  }, [menu1])
+  
   const MenuValue = {
     //맵 페이지
     MAP_MENU() {
@@ -47,5 +55,7 @@ const useMenuSelector = () => {
     //not a function 오류가 뜸으로 if 걸어둠
     if (menu) MenuValue[MenuType]();
   };
+
+  return menu;
 };
 export default useMenuSelector;

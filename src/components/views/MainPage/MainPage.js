@@ -12,11 +12,13 @@ import { useDispatch } from "react-redux";
 import {
   MenuTurnOff,
   SearchTurnOff,
+  turnMenu,
 } from "../../../redux/_actions/turn_action";
 function MainPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(turnMenu("MAIN_MENU"))
     /** 메인페이지 랜더링 될 시 MenuBar의 TurnOff 값을 false로 바꿈*/
     dispatch(MenuTurnOff(false));
     dispatch(SearchTurnOff(false));

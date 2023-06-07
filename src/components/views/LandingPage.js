@@ -4,13 +4,14 @@ import { useDispatch } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
 import instance from "../../axios";
 import useMenuSelector from "../../hook/useMenuSelector";
+import { turnMenu } from "../../redux/_actions/turn_action";
 
 function LandingPage() {
-  useMenuSelector();
+  const menu = useMenuSelector();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
-    navigate("/mainPage")
+    // navigate("/mainPage")
     instance
       .post("/api/users/login", {
         email: "admin@naver.com",
