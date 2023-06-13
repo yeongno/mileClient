@@ -63,7 +63,7 @@ function Footer(props) {
       for (index; index < 10; index++) {
         // 해당 pagination 누르면 스타일 변경
         if (NowIndex === index) {
-          return <p style={{ color: "yellow" }}>did</p>;
+          return <p style={{ color: "blue" , fontWeight:"bold"}}>{index+1}</p>;
         }
         return (
           <p
@@ -80,7 +80,7 @@ function Footer(props) {
       for (index; index < 10; index++) {
         //해당 pagination 누르면 스타일 변경
         if (NowIndex === index) {
-          return <p style={{ color: "yellow" }}>did</p>;
+          return <p style={{ color: "blue", fontWeight:"bold" }}>{nowPaging*10+index+1}</p>;
         }
         if (index === 9 && nowPaging !== floor(Paging / 10)) {
           return (

@@ -10,15 +10,15 @@ function LandingPage() {
   const menu = useMenuSelector();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  useEffect(() => {
-    // navigate("/mainPage")
-    instance
-      .post("/api/users/login", {
-        email: "admin@naver.com",
-        password: "admin",
-      })
-      .then((res) => console.log("res", res));
-  }, []);
+  // useEffect(() => {
+  //   // navigate("/mainPage")
+  //   instance
+  //     .post("/api/users/login", {
+  //       email: "admin@naver.com",
+  //       password: "admin",
+  //     })
+  //     .then((res) => console.log("res", res));
+  // }, []);
 
   return (
     <div>

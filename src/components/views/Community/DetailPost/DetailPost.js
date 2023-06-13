@@ -10,11 +10,11 @@ function DetailPost(props) {
   const postId = useParams().postId;
   const dispatch = useDispatch();
   const [Title, setTitle] = useState("");
-  const { setOnDetailPost } = useOutletContext();
+  // const { setOnDetailPost } = useOutletContext();
 
   useEffect(() => {
     fetchPostList();
-    setOnDetailPost(Title);
+    // setOnDetailPost(Title);
   }, [postId]);
 
   const fetchPostList = () => {

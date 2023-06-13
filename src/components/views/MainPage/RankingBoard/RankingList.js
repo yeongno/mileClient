@@ -25,7 +25,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">
@@ -43,7 +43,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">
@@ -61,7 +61,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">
@@ -79,7 +79,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">
@@ -97,7 +97,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">
@@ -115,7 +115,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">
@@ -133,7 +133,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">
@@ -151,7 +151,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">
@@ -169,7 +169,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">
@@ -187,7 +187,7 @@ function RankingList() {
                 </div>
                 <div className="rankRightTop_section">
                   <a>1위</a>
-                  <span>69사단</span>
+                  <span>54사단</span>
                 </div>
               </div>
               <div className="rankBottom_container">

@@ -10,6 +10,7 @@ import TopLabel from "./TopLabel";
 import moment from "moment";
 import Notice from "./Notice";
 import Footer from "./Footer";
+import { turnMenu } from "../../../../redux/_actions/turn_action";
 
 function ListSection(props) {
   const dispatch = useDispatch();
@@ -44,6 +45,8 @@ function ListSection(props) {
     );
   };
 
+
+
   const renderCards = Posts.map((posts, index) => {
     if (ThisPaging * 30 < index + 1 || index < ThisPaging * 30 - 30) {
       return;
@@ -58,7 +61,7 @@ function ListSection(props) {
             style={{
               color: "gray",
             }}
-            to={`/community/${Post[index]?._id}`}
+            to={`/community/whole/${Post[index]?._id}`}
             onClick={onDetail}
           >
             {Post[index]?.title}

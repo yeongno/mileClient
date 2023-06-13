@@ -9,6 +9,8 @@ import LoginPage from "./views/Athentication/LoginPage";
 import RegisterPage from "./views/Athentication/RegisterPage";
 import CommunityPage from "./views/Community/CommunityPage";
 import DetailPost from "./views/Community/DetailPost/DetailPost";
+import DivisionPage from "./views/Community/LeftSection/division/DivisionPage";
+import ListSection from "./views/Community/LeftSection/ListSection";
 import OnTest from "./views/Community/OnTest";
 import WritePost from "./views/Community/WritePost";
 import Footer from "./views/Foot/Footer";
@@ -47,8 +49,13 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/community" element={<CommunityPage />}>
-            <Route path="/community/:postId" element={<DetailPost />} />
+          <Route path="/community/whole" element={<ListSection />}>
+            
+            <Route path="/community/whole:postId" element={<DetailPost />} />
+            </Route>
+            <Route path="/community/division" element={<DivisionPage />} />
           </Route>
+
           <Route path="/writePost" element={<WritePost />} />
           <Route path="/onTest" element={<OnTest />} />
         </Route>

@@ -1,21 +1,28 @@
 import { UsbOutlined } from "@ant-design/icons";
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Outlet } from "react-router-dom";
+import { turnMenu } from "../../../redux/_actions/turn_action";
 import "../../styles/CommunityPage/MenuBarCom.scss";
 
 function MenuBarCom(props) {
+  const dispatch = useDispatch();
   return (
     <div className="MenuBarCom_container">
       <div className="roof_MenuBarCom"></div>
       <div className="leftMenuBarCom_container">
         <button onClick={()=>{
           props.setClass("public")
+          dispatch(turnMenu("COMMUNITY_MENU"));
+
         }}>전체</button>
         <div className="partition_MenuBarCom" 
    
         />
         <button      onClick={()=>{
-          props.setClass("division")
+          props.setClass("division");
+          dispatch(turnMenu("DIVISION_MENU"));
         }}>사단/근무지</button>
         <div className="partition_MenuBarCom" />
         <button>펫</button>

@@ -34,7 +34,7 @@ const useMenuSelector = () => {
     COMMUNITY_MENU() {
         console.log("abc")
       //MenuBar를 클릭 시 디포트 페이지인 main포럼으로 이동 할 수 있게 설정
-      navigate("/community");
+      navigate("/community/whole");
 
     },
     //커뮤니티 기본 픽 페이지
@@ -43,6 +43,13 @@ const useMenuSelector = () => {
       //기본 마운트 dispatch코드로 해당 빈 코드 실행
       //pageLabel은 turnMenu를 기반으로 나오기 때문 새로고침 시 필요함
     },
+        //커뮤니티 페이지
+        DIVISION_MENU() {
+            console.log("abc")
+          //MenuBar를 클릭 시 디포트 페이지인 main포럼으로 이동 할 수 있게 설정
+          navigate("/community/division");
+
+        },
     //Test 페이지
     TEST_MENU() {
       //우선 기본 페이지가 올 수 있게 설정
