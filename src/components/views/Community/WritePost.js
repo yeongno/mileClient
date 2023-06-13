@@ -32,16 +32,19 @@ function WritePost() {
       userFrom: userFrom,
       imagePath: FilePath,
       topic: Topic,
-      class: Class,
+      // class: Class,
     };
     dispatch(postGo(body)).then((response) => {
       if (response.payload.success) {
         // alert("Successed to post up");
+        message.success("게시글을 작성하였습니다.");
+        console.log(response)
       } else {
+
         alert("Failed to post up");
+        console.log(response);
       }
     });
-    message.success("게시글을 작성하였습니다.");
 
     // window.location.reload();
   };

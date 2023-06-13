@@ -17,7 +17,7 @@ function ListSection(props) {
   const Post = useSelector((state) => state.post.posts);
   const [LastIndex, setLastIndex] = useState(0);
   const [ThisPaging, setThisPaging] = useState(1);
-  const [ThisTopic, setThisTopic] = useState("public");
+  const [ThisTopic, setThisTopic] = useState("whole");
 
   const navigate = useNavigate();
   const [Posts, setPosts] = useState([]);

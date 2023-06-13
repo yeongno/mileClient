@@ -63,7 +63,7 @@ function RegisterPage() {
       name: Name,
     };
     dispatch(registerUser(body)).then((response) => {
-      if (response.payload.success) {
+      if (response.success) {
         navigate("/login");
       } else {
         alert("Failed to sign up");
