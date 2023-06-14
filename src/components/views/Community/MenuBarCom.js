@@ -25,11 +25,17 @@ function MenuBarCom(props) {
           dispatch(turnMenu("DIVISION_MENU"));
         }}>사단/근무지</button>
         <div className="partition_MenuBarCom" />
-        <button>펫</button>
+        <button      onClick={()=>{
+          props.setClass("division");
+          dispatch(turnMenu("DIVISION_MENU"));
+        }}>펫</button>
         <div className="partition_MenuBarCom" />
-        <button>멘토/멘티</button>
+        <button      onClick={()=>{
+          props.setClass("division");
+          dispatch(turnMenu("DIVISION_MENU"));
+        }}>멘토/멘티</button>
       </div>
-      <div className="rightMenuBarCom_container">
+      {/* <div className="rightMenuBarCom_container">
         <div className="rightMenuBarCom_inner">
           <UsbOutlined />
           <a>나 효은이다 님</a>
@@ -39,7 +45,7 @@ function MenuBarCom(props) {
           <span>3789개</span>
           <UsbOutlined />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

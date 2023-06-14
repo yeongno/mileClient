@@ -6,7 +6,7 @@ function PetWindow() {
     <div className="petWindowContainer_ListSection">
       <div className="headerPetWindow_ListSection">
         <p>내 펫</p>
-        <p>효은이</p>
+        <p>튼튼이</p>
         <p>D-546</p>
       </div>
       <div className="centerPetWindow_Listsection">

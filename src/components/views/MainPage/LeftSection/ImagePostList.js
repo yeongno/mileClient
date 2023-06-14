@@ -14,61 +14,61 @@ function ImagePostList() {
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목1</a>
           </div>
         </div>
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목2</a>
           </div>
         </div>
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목3</a>
           </div>
         </div>
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목4</a>
           </div>
         </div>
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목5</a>
           </div>
         </div>
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목6</a>
           </div>
         </div>
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목7</a>
           </div>
         </div>
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목8</a>
           </div>
         </div>
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목9</a>
           </div>
         </div>
         <div className="space_inner">
           <div className="eachCard_container">
             <img src={"/assets/profile.png"} />
-            <a>제목이다냥sidsidisid</a>
+            <a>제목10</a>
           </div>
         </div>
       </div>

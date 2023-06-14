@@ -11,21 +11,21 @@ function TodayRank() {
       <div className="topRankTodayRank_ListSection">
         <div className="firstCardTodayRank_ListSection">
           <img src="/assets/profile.png" alt="" />
-          <p>냥냥</p>
+          <p>콜록이</p>
         </div>
         <div className="secondCardTodayRank_ListSection">
           <img src="/assets/profile.png" alt="" />
-          <p>냥냥</p>
+          <p>튼튼이</p>
         </div>
       </div>
       <div className="restCardTodayRank_ListSection">
-        <p>알려준다 이것 저것을 말여</p>
-        <p>알려준다 이것 저것을 말여</p>
-        <p>알려준다 이것 저것을 말여</p>
-        <p>알려준다 이것 저것을 말여</p>
-        <p>알려준다 이것 저것을 말여</p>
-        <p>알려준다 이것 저것을 말여</p>
-        <p>알려준다 이것 저것을 말여</p>
+        <p>test1</p>
+        <p>test2</p>
+        <p>test3</p>
+        <p>test4</p>
+        <p>test5</p>
+        <p>test6</p>
+        <p>test7</p>
       </div>{" "}
     </div>
   );

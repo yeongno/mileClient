@@ -84,7 +84,7 @@ function NoticeList() {
           <img src="/assets/notice1.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/assets/notice2.jpg" alt="" className="notice1" />
+          <img src="/assets/dum1.png" alt="" className="notice1" />
         </SwiperSlide>
       </StyledSwiper>
     </div>
