@@ -27,7 +27,7 @@ function Footer(props) {
     }
   };
   const onNextPage = () => {
-    if (floor(Paging / 10) <= nowPaging) {
+    if (floor((Paging-1) / 10) <= nowPaging) {
     } else {
       setNowPaging(nowPaging + 1);
       props.setThisPaging((nowPaging + 1) * 10 + 1);
@@ -35,14 +35,17 @@ function Footer(props) {
     }
   };
   const onPrePage = () => {
-    if (floor(Paging / 10) < nowPaging || nowPaging === 0) {
+    if (nowPaging === 0) {
+      return;
+    } else if (floor(Paging / 10) < nowPaging) {
+      return;
     } else {
       setNowPaging(nowPaging - 1);
       props.setThisPaging((nowPaging - 1) * 10 + 1);
     }
     setNowIndex(0);
   };
-
+  
   useEffect(() => {
     setNowIndex(0);
     setNowPaging(0);

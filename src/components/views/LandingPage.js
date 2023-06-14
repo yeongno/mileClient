@@ -5,6 +5,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import instance from "../../axios";
 import useMenuSelector from "../../hook/useMenuSelector";
 import { turnMenu } from "../../redux/_actions/turn_action";
+import MainPage from "./MainPage/MainPage"
 
 function LandingPage() {
   const menu = useMenuSelector();
@@ -22,6 +23,9 @@ function LandingPage() {
 
   return (
     <div>
+      {menu && <></> ||
+      <MainPage />
+    }
       <Outlet />
     </div>
   );

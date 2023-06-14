@@ -9,9 +9,7 @@ const useMenuSelector = () => {
   const [menu, setInit] = useState(menu1)
   useEffect(() => {
     // executeMenu("MAIN_MENU");
-    if(menu==undefined){
-        setInit("MAIN_MENU");
-    }
+ 
   }, []);
   useEffect(() => {
     executeMenu(menu);
