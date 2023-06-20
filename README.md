@@ -2,5 +2,6 @@
 
 ## skill 
   Front = JavaScript, react, scss
+  
   backend = node.js, mongoDB
 
